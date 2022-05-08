@@ -1,0 +1,99 @@
+html, body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  canvas {
+    display: block;
+  }
+  
+  /*styling*/
+  .mySlider {
+      width : 200px;
+      background-color: transparent;
+    
+      /* Removes some defaults */
+      -webkit-appearance: none;
+  
+  }
+  .mySlider:focus{
+     outline : none;
+  
+  }
+  /* tracker */
+  .mySlider::-webkit-slider-runnable-track {
+    background: linear-gradient(to right,black,red);
+    height : 5px ;
+    -webkit-appearance: none;
+    cursor: pointer;
+  }
+  .mySlider::-webkit-slider-thumb {
+    width: 30px;
+    height: 30px;
+    background: #8C3934;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top : -10px;
+    border-radius:  20px;
+  }
+  /*selector*/
+  .custom-select {
+    position: relative;
+    font-family: Arial;
+  }
+  
+  .custom-select select {
+    display: none; /*hide original SELECT element: */
+  }
+  
+  .select-selected {
+    background-color: DodgerBlue;
+  }
+  
+  /* Style the arrow inside the select element: */
+  .select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #fff transparent transparent transparent;
+  }
+  
+  /* Point the arrow upwards when the select box is open (active): */
+  .select-selected.select-arrow-active:after {
+    border-color: transparent transparent #fff transparent;
+    top: 7px;
+  }
+  
+  /* style the items (options), including the selected item: */
+  .select-items div,.select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+  }
+  
+  /* Style items (options): */
+  .select-items {
+    position: absolute;
+    background-color: none;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+  }
+  
+  /* Hide the items when the select box is closed: */
+  .select-hide {
+    display: none;
+  }
+  
+  .select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  

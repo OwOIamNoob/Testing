@@ -21,7 +21,7 @@ class Objective{
         } 
         //dialog
         this.lib = loadStrings("assets/context/dialog/" + this.type + ".txt");
-        this.dialog = new Converse(font,20,delay/2);
+        this.dialog = new Converse(font,20,delay/3);
         //display
         this.buffer = createGraphics(width/15,height/6);
         this.speed = speed;
@@ -39,15 +39,15 @@ class Objective{
             this.buffer.image(this.ani[this.index],0,0,this.buffer.width,this.buffer.height);
             }
             this.x = max(10,min(this.lim,this.x + int(this.speed*direction)));
-            if(frameCount % this.delay == 0) this.dialog.push(random(this.lib));
+            
     }   
     show(){
         if(this.running ){
-            this.draw();
             image(this.buffer,this.x,this.y);
         }   
         else image(this.idle,this.x,this.y,height/12,height/6);
          //display dialog
         if(this.dialog.dialog)    this.dialog.display(this.x + 30,this.y-30);
+        if(frameCount % this.delay == 0) this.dialog.push(random(this.lib));
     }
   }

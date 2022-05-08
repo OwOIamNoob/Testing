@@ -9,7 +9,7 @@ class Input{
         this.y = height/4;
         this.index = 0;
         for(let i = 0;i<size;i++){
-            this.graphic[i] = new Character(this.spacing*(2*i+2) + this.c_size*(i + 1/2),this.y,this.c_size/8,this.c_size/2,48,8,color(190,190,200),true,0 );
+            this.graphic[i] = new Character(width/10 + this.c_size*i + this.spacing*i,this.y,this.c_size/8,this.c_size/2,48,8,color(200+i/this.size*50,200 + i/this.size*20,230-i/this.size*150),true,0 );
         }
         this.value = [];
     }
