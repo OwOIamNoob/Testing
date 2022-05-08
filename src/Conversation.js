@@ -45,11 +45,14 @@ class Converse{
         }
     }
     push(inp){
-        this.dialog = splitTokens(inp, ';');
-        this.pos = 0;
-        this.time = frameCount;
-        this.active = true;
-        console.log(this.dialog);
+        if(this.dialog.length == 0){
+            this.dialog = splitTokens(inp, ';');
+            this.pos = 0;
+            this.time = frameCount;
+            this.active = true;
+            console.log(this.dialog);
+        }
+        
     }
 
 }
