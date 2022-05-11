@@ -11,11 +11,18 @@ body{
 
   /* This centers our sketch vertically. */
   align-items: center;
+  /*fill page */
+  background: rgba(0, 0, 0, 0.9);
 }
   canvas {
     display: block;
   }
-  
+
+  #sketchHolder {
+    margin: 0 auto;
+    position: relative;
+
+  }
   /*styling*/
   .mySlider {
       width : 200px;

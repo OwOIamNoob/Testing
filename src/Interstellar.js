@@ -18,6 +18,9 @@ class Stellar{
         for(let i = 0;i<this.size;i++) this.graphic[i].show();
     }
     clicked(){
-        for(let i = 0;i<this.size;i++) this.graphic[i].clicked();
+        let touched = false;
+        for(let i = 0;i<this.size;i++) touched = touched + this.graphic[i].clicked();
+
+        return touched;
     }
 }

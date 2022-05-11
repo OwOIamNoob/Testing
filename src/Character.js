@@ -124,7 +124,7 @@ class Character{
         {
       this.end = c_preset[value];
       this.line = c_line[value];
-      this.assemble = String.fromCharCode(value);
+      this.assemble = value;
       for(let i = 0;i < 6;i ++){
         if(int(this.posit_x[i]) != int(int(this.end[i] % 3)* this.width) ||   
            int(this.posit_y[i]) != int(int(this.end[i] /3) * this.width)){

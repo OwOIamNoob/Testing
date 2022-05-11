@@ -9,7 +9,7 @@ class Opponent{
     //interaction
     clicked(bound){
         if(mouseX>= this.object.x - bound && mouseX <= this.object.x + this.object.buffer.width - bound  &&
-            mouseY>= this.object.y && mouseY <= this.object.y + this.object.buffer.height ) this.object.dialog.push(random(this.hint));
+            mouseY>= this.object.y && mouseY <= this.object.y + this.object.buffer.height ) this.object.dialog.push(random(this.hint),true);
     }
     move(pos){
         //positioning

@@ -10,9 +10,14 @@ class Suggestion{
     clicked(){
             if(mouseX >= this.x-this.width && mouseX<= this.x + this.width && mouseY >= this.y - this.width && mouseY <= this.y + this.width){
                 this.active = !this.active;
-                if(this.active) this.object.update(this.value);
+                if(this.active){
+                    this.object.update(this.value);
+                    return true;
+                }
                 else this.object.update(48);
+                
             }
+        return false;
     }
     show(){
         this.object.display();

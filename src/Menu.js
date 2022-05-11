@@ -10,6 +10,7 @@ class Menu{
         this.design = createGraphics(width,height);
         //player name
         this.name = createInput('');
+        this.name.parent('sketchHolder');
         //characteristics
         this.name.position(width/3,height/3);
         this.name.size(width/3);
@@ -18,11 +19,13 @@ class Menu{
         this.name.style('font-size','50px');
         //level
         this.level = createSlider(1,3);
+        this.level.parent('sketchHolder');
         this.level.position(width/3,height/2);
         this.level.addClass('mySlider');
         this.level.style('width','300px');
         //categories
         this.categories = createSelect();
+        this.categories.parent('sketchHolder');
         //characteristics
         this.categories.style('font-size','50px');
         this.categories.position(width/3,height*2/3 - 40);
@@ -36,6 +39,7 @@ class Menu{
         this.categories.style('width','300px');
         //Botplay
         this.target = createInput('');
+        this.target.parent('sketchHolder');
         //characteristics
         this.target.position(width/3,height*5/6);
         this.target.size(width/2);

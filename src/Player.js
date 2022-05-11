@@ -10,7 +10,8 @@ class Player{
     move(){
         if(keyIsDown(39) || keyIsDown(37)){
             this.object.running = true;
-           this.object.draw(int(keyCode - 38));
+            //avoid disalocate
+            if(keyCode == 39 || keyCode == 37)   this.object.draw(int(keyCode - 38));
         }
         else this.object.running = false;
     }

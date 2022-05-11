@@ -1,64 +1,64 @@
-GAME
-PLAY
-STOP
-FAIL
-LOSE
-WIN
-TENNIS
-BADMINTON
-RUN
-RUSH
-SPORT
-PLAYER
-SERVE
-SCORE
-SET
-TIE
-NET
-GOAL
-IDLE
-BOXING
-SWIMMING
-GO
-DIVE
-CLASS
-RANGE
-LIMIT
-SHOES
-SOCKS
-KICK
-BEGIN
-START
-DURATION
-RUGBY
-GYM
-ADDITIVES
-JOIN
-LEAVE
-THROW
-SCOPE
-SCAN
-STRIKE
-STRONG
-PASS
-ENTER
-RACK
-STOP
-FLAG
-MEDAL
-CUP
-PITCH
-CLUTCH
-PACE
-PORT
-PADDLE
-ACTION
-ENTERTAIN
-MOTO
-TEACH
-COACH
-TRAIN
-TRACK
-LINE
-LANE
-LOCK
+GAME;Mot tap hop cac hau qua co the kiem soat duoc
+PLAY;Hanh dong duy tri game
+STOP;Dung khong lam gi nua
+FAIL;That bai
+LOSE;Thua cuoc
+WIN;Thang cuoc
+TENNIS;quan vot
+BADMINTON;cau long
+RUN;chay
+RUSH;chay nuoc rut
+SPORT;the thao
+PLAYER;nguoi choi
+SERVE;giao tranh
+SCORE;ghi ban
+SET;tap thi dau
+TIE;hoa
+NET;luoi
+GOAL;gon
+IDLE;tu the san sang
+BOXING;dam boc
+SWIMMING;boi loi
+GO;bat dau
+DIVE;xam nhap vao
+CLASS;phan hang
+RANGE;tam 
+LIMIT;gioi han
+SHOES;doi giay
+SOCKS;doi tat
+KICK;da
+BEGIN;bat dau
+START;bat dau
+DURATION;thoi gian
+RUGBY;bong bau duc
+GYM;the duc dung cu
+ADDITIVES;phu gia
+JOIN;gia nhap
+LEAVE;roi khoi
+THROW;nem
+SCOPE;tam ngam
+SCAN;quet
+STRIKE;tien cong
+STRONG;manh
+PASS;truyen
+ENTER;tien vao
+RACK;quan vot
+FLAG;cai co
+MEDAL;huan chuong
+CUP;cup vo dich
+PITCH;dinh diem
+CLUTCH;ban dap
+PACE;toc do
+PORT;cua khau
+PADDLE;cheo thuyen
+ACTION;hanh dong
+ENTERTAIN;giai tri
+MOTTO;cham ngon
+TEACH;day
+COACH;huan luyen
+TRAIN;tap luyen
+TRACK;theo dau
+LINE;hang
+LANE;mien
+LOCK;khoa
+ATHELETE;van dong vien

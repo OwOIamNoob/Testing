@@ -1,97 +1,85 @@
-ATHLETICS
-RUNNING
-RACE
-JUMP
-DISTANCE
-THROW
-PROFESSIONAL
-CHAMPIONSHIP
-COMPETITION
-HURDLE
-OLYMPICS
-ENTHUSIASTIC
-ATHLETE
-BADMINTON
-RACKET
-BAT
-EXERCISE
-TOURNAMENT
-COURT
-BOUNCE
-SMASH
-SYSTEM
-COMPETE
-QUALIFICATION
-RANKINGS
-TACTICAL
-INSTRUCTOR
-BASKETBALL
-LEAGUE
-PASS
-SPRINGBOARD
-TECHNIQUE
-GUARDING
-GYMNASTIC
-ACROBATIC
-BALANCE
-TRAMPOLINE
-RHYTHM
-MEDLEY
-DISMOUNT
-VAULT
-SWIMMING
-FREESTYLE
-BACKSTROKE
-STROKE
-RECEIVER
-BACKHAND
-ADVANTAGE
-DISADVANTAGE
-RACQUET
-RALLY
-VOLLEY
-SKIER
-AERIAL
-ALPINE
-GATE
-BIND
-GOGGLES
-INCLINE
-PEAKS
-PENALTY
-RIFLE
-SLALOM
-SLOPE
-TERRAIN
-BOARDING
-CHARGE
-HELMET
-ICING
-FRACTION
-RING
-POWER
-VIOLATION
-INJURY
-BOUT
-CLINCH
-CROSS
-FOUL
-GLOVES
-HOOK
-KNOCKDOWN
-KNOCKOUT
-MATCH
-NEUTRAL
-PROMOTE
-PUNCH
-PAWS
-FAILURE
-WEIGHT
-DEFENDER
-GOALKEEPER
-HANDBALL
-OFFSIDE
-SHOOTOUT
-STRIKE
-TACKLE
-RETURN
+ATHLETICS;the van hoi
+RUNNING;cuoc thi chay 
+RACE;cuoc dua 
+DISTANCE;khoang cach 
+PROFESSIONAL;chuyen nghiep
+CHAMPIONSHIP;chuc quan quan 
+COMPETITION;cuoc thi 
+HURDLE;hang rao 
+OLYMPICS;the van hoi the gioi
+RACKET;vot 
+EXERCISE;bai tap 
+TOURNAMENT;giai dau 
+COURT;san nha 
+BOUNCE;bat nhay 
+SMASH;dap manh xuong 
+SYSTEM;he thong 
+COMPETE;thi dau 
+QUALIFICATION;bang cap, chung chi 
+RANKINGS;xep hang 
+TACTICAL;mang tinh chien thuat 
+INSTRUCTOR;nguoi huong dan
+BASKETBALL;bong ro
+LEAGUE;lien doan
+SPRINGBOARD;ban dap 
+TECHNIQUE;ki thuat 
+GUARDING;canh gac 
+GYMNASTIC;the duc dung cu 
+ACROBATIC;nhao lon 
+BALANCE;can bang 
+TRAMPOLINE;tam bat lo xo 
+RHYTHM; nhip dieu 
+MEDLEY;cuoc danh nhau 
+DISMOUNT;thao roi 
+VAULT;khung vom 
+FREESTYLE;tu do phong cach 
+BACKSTROKE;boi ngua 
+STROKE;cheo lai thuyen 
+RECEIVER;nguoi nhan 
+BACKHAND;trai tay 
+ADVANTAGE;loi the 
+DISADVANTAGE;that the
+RACQUET;vot danh tennis 
+RALLY;tap hop 
+VOLLEY;chuyen 
+SKIER;nguoi truot tuyet 
+AERIAL;tren khong 
+ALPINE;nui cao 
+GATE;cong vao 
+BIND;troi buoc 
+GOGGLES;kinh mat 
+INCLINE;nghieng xuong 
+PEAKS;dinh cao 
+PENALTY;hinh phat 
+RIFLE;sung truong
+SLALOM;truot tuyet co chuong ngai vat
+SLOPE;con doc 
+TERRAIN;dia hinh 
+BOARDING;vi pham luat khi tan cong nguoi khac 
+CHARGE;thu lao 
+HELMET;mu bao hiem 
+ICING;dong bang 
+FRACTION;phan nho 
+RING;vong xuyen 
+POWER;suc manh 
+VIOLATION;su vi pham 
+INJURY;chan thuong
+BOUT;luot 
+CLINCH;ket thuc 
+CROSS;vuot qua 
+FOUL;su xam lan 
+GLOVES;gang tay 
+HOOK;moc vao
+KNOCKDOWN;ha guc 
+KNOCKOUT;cuoc dau vong loai 
+MATCH;van dau 
+NEUTRAL;trung tinh 
+PROMOTE;thang cap 
+FAILURE;su that bai 
+DEFENDER;nguoi phong thu 
+GOALKEEPER;thu mon 
+HANDBALL;bong nem 
+OFFSIDE;viet vi 
+SHOOTOUT;da luan luu
+TACKLE;giai quyet 
+RETURN; quay lai 

@@ -12,6 +12,7 @@ class Moon{
         this.time_started = frameCount/30;
         this.tint = 120/(this.duration*30);
         this.object = loadImage("assets/object/moon.png");
+        this.left = attempt;
     }
     draw(){
         this.buffer.push();
@@ -27,6 +28,7 @@ class Moon{
         this.exp = this.buffer.width + this.radius;
         this.time_started += this.period + this.delay;
         console.log("next period : "+ this.time_started);
+        this.left --;
     }
     show(){
         let scale = this.buffer.width*(1 + frameCount/(this.duration*30)/3);

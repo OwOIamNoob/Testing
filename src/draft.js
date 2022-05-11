@@ -1,10 +1,11 @@
 
 var a;
 function setup(){
-  createCanvas(800,600);
-  a = new Menu();
+  let cnv = createCanvas(800,600);
+  cnv.parent('sketchHolder');
+  a = new Quest('ABC');
 }
 function draw(){
-  background(0);
+  background(220);
   a.show();
 }

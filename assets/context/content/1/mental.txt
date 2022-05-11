@@ -1,33 +1,32 @@
-HAPPY
-SAD 
-MENTAL
-PSYCHOLOGY
-PSYCH
-ILLNESS
-HUNGRY
-DISORDER
-FEELING
-THOUGHTFUL
-THINK
-ACHE 
-AUDITION
-ACTIVE 
-LACK
-LUSTFUL
-GUILTY
-ANGUISH
-ANXIETY
-PATIENT
-HUNGRY
-THIRSTY
-CONSIOUS
-UNCONSIOUS
-MOBILE
-OPTIMISTIC
-ENTHUSIATIC
-FEVER
-WORRY
-SECURED
-OPTICAL
-ANALYZE
-THRUST
+HAPPY;vui
+SAD;buon 
+MENTAL;tinh than
+PSYCHOLOGY;tam li hoc
+PSYCH;ke tam than
+ILLNESS;benh tat
+HUNGRY;doi
+DISORDER;chung roi loan
+FEELING;cam gian
+THOUGHTFUL;chu dao
+THINK;suy nghi
+ACHE;con dau 
+AUDITION;tu ki
+ACTIVE;chu dong 
+LACK;thieu sot
+LUSTFUL;dam dang
+GUILTY;cam giac toi loi
+ANGUISH;dau kho
+ANXIETY;su lo au
+PATIENT;benh nhan
+THIRSTY;khat nuoc
+CONSIOUS;tinh tao
+UNCONSIOUS;khong tinh tao
+MOBILE;tinh hay thay doi 
+OPTIMISTIC;lac quan
+ENTHUSIATIC;nang dong
+FEVER;con sot
+WORRY;lo lang
+SECURED;an toan
+OPTIMISM;chu nghia lac quan
+ANALYZE;phan tich
+THRUST;dua day

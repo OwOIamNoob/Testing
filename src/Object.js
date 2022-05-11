@@ -48,6 +48,6 @@ class Objective{
         else image(this.idle,this.x,this.y,height/12,height/6);
          //display dialog
         if(this.dialog.dialog)    this.dialog.display(this.x + 30,this.y-30);
-        if(frameCount % this.delay == 0) this.dialog.push(random(this.lib));
+        if(frameCount % this.delay == 0) this.dialog.push(random(this.lib),false);
     }
   }

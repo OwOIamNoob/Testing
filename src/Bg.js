@@ -22,33 +22,39 @@ class Bg{
         let pos = this.begin;
         for(let i = 0;i<this.obj.length;i++){
             //active or not
+            if(pos > x + width) break;
+
             if(pos+this.width[i] < x){
                 pos += this.width[i];
                 continue;  
             }
-            if(pos > x + width) break;
-            //rendering
-            if(this.obj[i] < 0 ){
-                pos += this.width[i];
-                continue;
-            }
-            else {
-                let ratio = this.width[i]/this.ref[this.obj[i]].width;
-                let h = this.ref[this.obj[i]].height*ratio;
-                
-                image(this.ref[this.obj[i]],pos,5*height/6 - h,this.width[i],h);
-                if(this.obj[i] > 0){
-                    push();
-                    textAlign(CENTER);
-                    textFont(this.font);
-                    fill(221,127,0);
-                    textSize(this.width[i]/(2*score.length))
-                    text(str(score),pos+this.width[i]/2,5*height/6 - 2*h/3);
-                    pop();
+            else{
+                                //rendering
+                if(this.obj[i] < 0 ){
+                    pos += this.width[i];
+                    continue;
                 }
+                    else {
+                        let ratio = this.width[i]/this.ref[this.obj[i]].width;
+                        let h = this.ref[this.obj[i]].height*ratio;
                 
-                pos += this.width[i];
+                        image(this.ref[this.obj[i]],pos,5*height/6 - h,this.width[i],h);
+                        
+                        if(this.obj[i] > 0){
+                            score = str(score);
+                            push();
+                            textAlign(CENTER);
+                            textFont(this.font);
+                            fill(0);
+                            textSize(this.width[i]/(2*score.length))
+                            text(str(score),pos+this.width[i]/2,5*height/6 - 2*h/3);
+                            pop();
+                    }
+                
+                    pos += this.width[i];
             }
+            }
+
         }
     }
 }

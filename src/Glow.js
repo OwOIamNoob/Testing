@@ -24,14 +24,15 @@ class Glitter{
 
     }
     //reuse properties
-    reset(position){
+    reset(position,bound){
         this.pos[position][1] = this.buffer.height + 10 ;
+        this.pos[position][0] = random(0, min(width,5/2*width - bound));
        this.radius[position] = random(5,35); 
        this.direction[position] = createVector(random(0,3),random(1.5,3));
        this.direction[position].normalize();
     }
     //drawing particles
-    draw(y){
+    draw(y,bound){
         this.buffer.clear();
         for(let i =0; i<this.density; i++){
             //drawing
@@ -45,12 +46,12 @@ class Glitter{
             //positioning
             this.pos[i][1] -= this.speed*this.direction[i].y;
             this.pos[i][0] = (this.speed*this.direction[i].x + this.pos[i][0]) % width;
-            if(this.pos[i][1] <= 0) this.reset(i);
+            if(this.pos[i][1] <= 0) this.reset(i,bound);
         }
     }
     //displaying
-    show(y){
-        this.draw(y);
+    show(y,bound){
+        this.draw(y,bound);
         push();
         blendMode(ADD);
         image(this.buffer,0,y);

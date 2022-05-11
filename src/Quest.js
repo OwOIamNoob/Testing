@@ -1,41 +1,32 @@
 class Quest{
-    constructor(x,y,word,size,width,speed,spacing){
-        //characteristics
-        this.pos_x = x - (word.length/2)*(width) - ((word.length - 1)/2*spacing);
-        this.pos_y = y - width;
+    constructor(word){
         this.ans = word;
-        //point size
-        this.size = size;
-        //word size
-        this.width = width;
-        this.spacing = spacing;
-        //animation speed
-        this.speed = speed;
         this.graphic = [];
         this.fail = [];
-        
-        //initial graphic
-        for(let i = 0; i < word.length;i++){
-                this.correct[i] = false;
-                this.graphic[i] = new Character(this.pos_x + i*width + i*this.spacing,
-                                                this.pos_y,this.size,
-                                                this.width/2,189,this.speed,true,0);
+        //auto word style
+        this.c_size = min(width/this.ans.length * 4/5,height/5);
+        this.spacing = width/(this.ans.length*10);
+        this.x = width/2;
+        this.y = height/4;
+        this.index = 0;
+        for(let i = 0;i<this.ans.length;i++){
+            this.graphic[i] = new Character(this.x + (i-this.ans.length/2+1/2)*this.c_size + 2*(i-this.ans.length/2 + 2)*this.spacing,this.y,this.c_size/8,this.c_size/2,48,8,color(200+i/this.ans.length*50,200 + i/this.ans.length*20,230-i/this.ans.length*150),true,0 );
         }
-        //game state
-        this.done = false;
+        //quest status
         this.num = 0;
+        this.done = false;
     }
 
-    display(){
+    show(){
         for(let i =0;i < this.graphic.length;i++){
             this.graphic[i].display();
         }
     }
     update(value){
-        let success = false;
+        let success = [];
         for(let i = 0; i < this.graphic.length;i++){
             if(String.fromCharCode(value) == this.ans[i]){
-                this.correct[i] = true;
+                success[success.length] = i;
                 this.graphic[i].update(value);
                 this.num ++ ;
             }

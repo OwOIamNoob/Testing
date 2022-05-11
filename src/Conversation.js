@@ -13,7 +13,6 @@ class Converse{
         this.delay = delay;
         this.time = 0;
         this.active =0;
-        
     }
     display(x,y){
         // text(this.time,200,300);
@@ -26,7 +25,7 @@ class Converse{
             textFont(this.Font);
             fill(255,255,255,this.opa);
             //rendering
-            text(this.dialog[this.pos],x,y);
+            text(this.dialog[this.pos],x,y,width/3,height/6);
             //updating
             this.opa = max(0,min(255,this.opa + ( (frameCount - this.time) >= 2*(this.delay/3) + 5 ? -1:1)*this.speed));
             pop();
@@ -44,8 +43,8 @@ class Converse{
         }
         }
     }
-    push(inp){
-        if(this.dialog.length == 0){
+    push(inp,prior){
+        if(this.dialog.length == 0 || prior){
             this.dialog = splitTokens(inp, ';');
             this.pos = 0;
             this.time = frameCount;
