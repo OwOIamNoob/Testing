@@ -1,5 +1,5 @@
 class Objective{
-    constructor(start,type,size,font,delay,speed,fps){
+    constructor(start,type,size,delay,speed,fps){
         //bot or player
         this.type  = str(type);
            //positioning
@@ -21,7 +21,7 @@ class Objective{
         } 
         //dialog
         this.lib = loadStrings("assets/context/dialog/" + this.type + ".txt");
-        this.dialog = new Converse(font,20,delay/3);
+        this.dialog = new Converse(20,delay/3);
         //display
         this.buffer = createGraphics(width/15,height/6);
         this.speed = speed;

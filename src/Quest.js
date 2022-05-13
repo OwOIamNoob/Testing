@@ -15,6 +15,7 @@ class Quest{
         //quest status
         this.num = 0;
         this.done = false;
+        console.log("Quest assigned");
     }
 
     show(){
@@ -25,13 +26,13 @@ class Quest{
     update(value){
         let success = [];
         for(let i = 0; i < this.graphic.length;i++){
-            if(String.fromCharCode(value) == this.ans[i]){
+            if(String.fromCharCode(value) == this.ans[i] && String.fromCharCode(this.graphic[i].assemble) != this.ans[i]){
                 success[success.length] = i;
                 this.graphic[i].update(value);
                 this.num ++ ;
             }
         }
-        if(this.num == this.graphic.length) this.done = true;
+        if(this.num >= this.graphic.length) this.done = true;
         return success;
     }
 }

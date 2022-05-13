@@ -32,7 +32,6 @@ class Menu{
         this.categories.size(width/3);
         this.categories.option('sport');
         this.categories.option('mental');
-        this.categories.option('ocean');
         this.categories.style('background','none');
         this.categories.style('broder-radius', '0px');
         this.categories.style('color','red');

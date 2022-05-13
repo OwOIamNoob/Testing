@@ -7,6 +7,7 @@ class Block{
         this.object = loadImage("assets/object/block.png");
         this.end = loadImage("assets/object/endblock.png");
         this.Font = loadFont("assets/font/led_counter-7.ttf");
+        console.log("Block assigned");
     }
     push(content){
         if(this.content.length < this.size)

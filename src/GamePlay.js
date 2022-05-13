@@ -1,69 +1,77 @@
 class Gameplay{
-    constructor(name,difficulty,theme){
+    constructor(name,difficulty,library,fail,hint){
         //game is going
         this.hold = true;
+        console.log(this.hold);
         //general information
-        this.bonus = difficulty;
-        thís.attempt = 18-difficulty*3;
-        this.failure = 9-2*difficulty;
-        this.delay = 8;
+        this.bonus = 25*difficulty;
+        this.attempt = 18 - difficulty * 3;
+        this.failure = 11 - 2 * difficulty;
+        this.period = 15*(4 - difficulty);
+        this.delay = 5;
         //database
-        this.path = "assets/context/content/" + str(difficulty) + "/" + theme + '.txt';
-        this.lib = loadStrings(this.path);
+        
+        this.lib = library;
         this.answer = splitTokens(random(this.lib),';');
         console.log(this.answer);
-        this.fail = loadStrings("assets/context/dialog/Fail.txt");
-        //font
-        this.conv_font = loadFont("assets/font/MorrisRomanBlack.ttf");
-        this.object_font = loadFont("assets/font/led_counter-7.ttf");
-        this.scrore_font = loadFont("assets/font/score.ttf");
+        this.fail = fail;
+        this.hint = hint;
+        console.log("Fail : " + this.fail.length);
         //interactive object initials
         //
-        this.player = new Player(this.conv_font,name); /*6*/
-        this.opponent = new Opponent(this.conv_font);/*7*/
+        this.player = new Player(name); /*6*/
+        this.opponent = new Opponent(this.hint);/*7*/
+        //addition
+        
         this.input = new Input(this.answer[0].length);/*4*/
         this.quest = new Quest(this.answer[0]); /*4*/ 
         this.guess = new Character(width/2,2*height/3,height/10,height/6,48,15,color(116,35,35),false,0);/*2*/
-        this.suggestion = new Stellar(6,input.y+input.c_size/2,input.c_size/2,this.answer[0]); /*3*/
-        this.bot  = new Bot(this.path,this.answer[0].length);
+        if(this.guess) console.log("Guess assigned");
+        this.suggestion = new Stellar(6,this.input.y,this.input.c_size/2,this.answer[0]); /*3*/
+        this.bot  = new Bot(library,this.answer[0].length);
+        console.log(this.bot.library);
         //background objects
         //
         this.bg = loadImage("assets/object/background.png");
-        this.background = new Bg(this.scrore_font);/*5*/
+        this.background = new Bg(2*width);/*5*/
         this.foreground = new Fence(int(random(10,15.5)),2*width);/*9*/
-        this.clock = new Moon(this.attempt,this.period,5); /*1*/
+        this.moon = new Moon(this.attempt,this.period,this.delay); /*1*/
         this.surface = new Block(this.failure,2*width);/*8*/
         this.glitter = new Glitter(3,25,60,height/2);/*0*/
+        console.log("Required items achieved");
         //key event allowance
         this.allow = true;
         //player info
-        this.reward = 50*difficulty/2;
+        this.reward = 50*difficulty;
         this.degrade = 0.05;
         this.score = 0;
         this.original = 0;
         this.penalty = 1;
-        //game trimming
-        this.translate = 0;
         //status
         this.status = 0;
         //time 
         this.time = frameCount;
         //translate
         this.bound  = 0;
+        this.opponent.hint.push('Its meaning can be: \n\n' + this.answer[1]);
+        this.moon.reset();
     }
     //interaction
     clicked(){
         if(!this.allow) return ;
+        //click on suggestion 
         if(this.suggestion.clicked()){
             this.penalty = max(1-this.degrade*this.suggestion.graphic.length,this.penalty - this.degrade) ;
             this.score = this.original*this.penalty;
         } 
-        this.player.clicked(); 
-        this.opponent.clicked();
+        //object interaction
+        this.player.clicked(this.bound); 
+        this.opponent.clicked(this.bound);
+        //switch 
         if(mouseY >= this.input.y - this.input.c_size/2 && mouseY <= this.input.y + this.input.c_size/2){
             this.input.reset();
             this.input.active = !this.input.active;
-            this.player.object.dialog.push("I am guessing a " + (w.active ? 'word':'letter'),true);
+            this.player.object.dialog.push("I am guessing a " + (this.input.active ? 'word':'letter'),true);
         }
     }
    
@@ -72,64 +80,34 @@ class Gameplay{
     update(status){
         if(status == false){
             this.opponent.distance += width/this.failure;
+            this.opponent.object.dialog.push(random(this.fail),true);
+            this.original -= this.bonus;
         }
         else {
-            this.opponent.distance -= (width/this.failure)/2 ;
+            this.opponent.object.dialog.push('Yes, it has',true);
+            this.original += this.bonus;
         }
     }
-    //check input
+    //check
     check(){
-        if(!this.active){
-            //checking
-            let pos = this.quest.check();
-            //bot library filtering
-            this.bot.filter(this.direct,pos);
-            if(pos.length == 0){
-                this.surface.push(this.direct);
-                return false;
-            } 
-            else {
-                this.original += 50;
-                this.score = this.original*this.penalty;
-                return true;
-            }
-        }
-        else{
-            if(this.direct != this.answer[0]){
-                return false;
-        
-            }
-            else {
-                this.original += 50*this.bonus + 50*this.direct.length;
-                this.surface.push('0');
-                this.score = this.original*this.penalty;
-                this.status = 1;
-                return true;
-            }
-        }
-    }
-    //keyPressed
-    typed(){
-        if(this.allow){
-            if(this.input.active){
-                this.input.typed();
-                if(keyCode == ENTER ){
-                  let value = this.input.result();
+        this.time = frameCount +  this.delay*30;
+        this.moon.reset();
+        if(this.input.active){
+            let value = this.input.result();
                   this.player.object.dialog.push("It's " + value,true);
-                  if(value != q.ans){
+                  if(value != this.answer[0]){
                     this.surface.push('Fail');
                     this.input.reset();
+                    this.update(false);
                   }
                   else{
                     this.opponent.object.dialog.push("Yes;Yes it is;Thank you",true);
                     this.opponent.object.speed = -this.opponent.object.speed;
+                    this.opponent.distance = 3*width;
                   }
-                }
-              }
-              else{
-                if(keyCode >= 65 && keyCode <= 90) this.guess.update(keyCode);
-                else if(keyCode == 13){
-                  let value =  String.fromCharCode(this.guess.assemble);
+        }
+        else {
+            let value =  String.fromCharCode(this.guess.assemble);
                   value = value.toUpperCase();
                   if(value == 'A' ||
                      value == 'E' ||
@@ -140,8 +118,33 @@ class Gameplay{
                   else this.player.object.dialog.push("It has a " + value,true);
                   let pos = [];
                   pos = this.quest.update(int(this.guess.assemble));
-                   if(pos.length == 0) this.surface.push(value);
+                  
+                   if(pos.length == 0){
+                    this.surface.push(value);
+                    this.update(false);
+                   } 
+                   else this.update(true);
                   this.guess.update(48);
+                  this.bot.filter(value,pos);
+        }
+    }
+    //keyPressed
+    typed(){
+        //if typing allowed
+        if(this.allow){
+        //input style
+            //word input
+            if(this.input.active){
+                this.input.typed();
+                if(keyCode == ENTER ){
+                  this.check();
+                }
+              }
+            //key input
+              else{
+                if((keyCode >= 65 && keyCode <= 90)|| keyCode === 189) this.guess.update(keyCode);
+                else if(keyCode == 13){
+                  this.check();
                 }
               }
             
@@ -150,40 +153,71 @@ class Gameplay{
     }
     //conclude game
     endgame(){
-        if(this.opponent.x == this.opponent.object.lim) this.status = -1;
-        else if(this.opponent.x == this.player.x ) this.status = 1;
+        //game ending 
+        if(this.opponent.object.x == this.opponent.object.lim) this.status = -1;
+        else if(this.opponent.object.x - this.player.object.x  <= 2) this.status = 1;
+        //ensure game 
         if(this.quest.done){
-                this.opponent.object.speed = -this.opponent.object.speed;
+                this.opponent.object.speed = -5;
                 this.opponent.distance = 3*width;
         }
-        if(this.surface.content.length >= this.failure) this.opponent.distance = 3*width;
+        //stop displaying 
         if(this.status != 0) this.hold = false;
+    }
+    //time management
+    timeflag(){
+        //bot guess
+        if(frameCount/30 - this.moon.time_started >= 3*this.moon.period/4 && this.guess.assemble == 48 && !this.input.active && this.allow){
+            let auto = this.bot.guess();
+            this.guess.update(auto.charCodeAt(0));
+        } 
+        //
+        if(frameCount/30 - this.moon.time_started >= this.moon.period){
+            this.check();
+        }
     }
     //displaying
     show(){
+        background(this.bg);
         if(!this.hold) return ;
-        if(frameCount < this.time || this.status != 0 || this.quest.done || this.surface.content.length == this.failure || this.clock.left == -1 ) this.allow = false;
+        if(frameCount < this.time || this.status != 0 || this.quest.done || this.surface.content.length == this.failure ){
+            this.allow = false;
+            push();
+            blendMode(DODGE);
+            textAlign(CENTER);
+            fill(240,200,50);
+            textSize(50);
+            text("HOLD",width/2,height/3);
+            pop();
+        } 
         else this.allow = true;
         //bg
-        background(this.bg);
+        
         //effect
-        this.glitter.show();
+        this.glitter.show(height/3,this.bound);
         //clock 
-        this.clock.show();
-        //guess
-        this.guess.display();
+        this.moon.show(this);
+        //update glitter
+        this.glitter.speed  = 3 + 5*this.bound/width;
+        this.glitter.density = min(this.glitter.limit,this.glitter.base + this.bound/50);
         //suggestion
         this.suggestion.show();
         //quest shot
-        if(this.active)   this.input.show();  
-        else this.quest.display();   
+        if(this.input.active)   this.input.show();  
+        else{
+            this.quest.show();  
+            push();
+            blendMode(MULTIPLY);
+            this.guess.display();
+            pop();
+        }  
         //in relative position
-        this.bound = min(this.player.object.x -10,this.opponent.object.x - width/2);
+        this.bound = max(0,this.opponent.object.x - width/2);
+        if(keyIsDown(39) || keyIsDown(37)) this.bound = max(0,min(this.opponent.object.x - width/2,this.player.object.x - 10));
         push();
-        
         translate(-this.bound,0);
         //back object
-        this.background.show(this.score,bound);
+        this.background.show(this.score,this.bound);
         //character object
         this.player.show();
         this.opponent.show(this.player.object.x);
@@ -191,6 +225,10 @@ class Gameplay{
         this.surface.show(this.bound);
         this.foreground.show(this.bound);
         pop();
-        this.original = max(0,this.original - this.degrade/2);
+        this.original = max(0,this.original - this.degrade);
+        this.score = int(this.original*this.penalty);
+        //game auto edging
+        this.endgame();
+        this.timeflag();
     }
 }

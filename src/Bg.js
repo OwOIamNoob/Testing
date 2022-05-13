@@ -1,5 +1,5 @@
 class Bg{
-    constructor(Font,limit){
+    constructor(limit){
         this.begin = width/4;
         this.total = limit;
         this.ref = [];
@@ -16,7 +16,7 @@ class Bg{
                 break;
             }
         }
-        this.font = Font;
+        this.font = loadFont("assets/font/score.ttf");
     }
     show(score,x){
         let pos = this.begin;

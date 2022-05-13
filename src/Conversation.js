@@ -1,7 +1,7 @@
 class Converse{
-    constructor(font,size,delay){
+    constructor(size,delay){
         //style
-        this.Font = font;
+        this.Font = loadFont("assets/font/MorrisRomanBlack.ttf");
         this.size = size;
         //animation
         this.speed = 3 * 255/(delay);

@@ -1,6 +1,5 @@
 p5.disableFriendlyErrors = true;
 var a;
-let f,ff;
 let w;
 let bg;
 let surf;
@@ -16,27 +15,25 @@ let guess;
 let lib; 
 let ans;
 function preload(){
-    f = loadFont("assets/font/MorrisRomanBlack.ttf");
-    ff = loadFont("assets/font/score.TTF");
     bg = loadImage("assets/object/background.png");
     lib = loadStrings("assets/context/content/2/sport.txt");
-    
   }
 
 function setup() {
   let cnv = createCanvas(displayHeight*4/3, displayHeight);
   cnv.parent("sketchHolder");
   frameRate(30);
+  
   ans = splitTokens(random(lib),';');
-  a = new Player(f);
-  b = new Opponent(f);
+  a = new Player('ALIBABA');
+  b = new Opponent();
   w = new Input(ans[0].length);
   q = new Quest(ans[0]);
   surf = new Block(7,2*width);
   w.active = false;
   sug = new Stellar(6,w.y+w.c_size/2,w.c_size/2,'UNFUNUFE');
   fence = new Fence(int(random(10,15)),2*width);
-  back = new Bg(ff,2*width);
+  back = new Bg(2*width);
   moon = new Moon(4,1,1);
   glow = new Glitter(3,25,60,height/2);
   guess = new Character(width/2,2*height/3,height/10,height/6,48,15,color(116,35,35),false,0);
@@ -45,8 +42,8 @@ function setup() {
 }
 
 function draw() {
-  background(bg);
- 
+  background(a.bg);
+  
   moon.show();
   if(w.active) w.show();
   else{
@@ -58,6 +55,8 @@ function draw() {
   } 
   sug.show();
   bound = min(a.object.x - 10,b.object.x - width/2);
+  glow.speed  = 3 + 3*bound/width;
+  glow.density = min(glow.limit,glow.base + bound/40);
   glow.show(height/3,bound);
   push();
   translate(-bound,0);

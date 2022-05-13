@@ -2,6 +2,7 @@ class Glitter{
     constructor(speed, radius,density,depth){
         //initial graphic 
         this.model = loadImage('assets/object/background.png');
+        console.log(this.model);
         this.buffer = createGraphics(width,depth);
         //particle properties
         this.color = [];
@@ -10,8 +11,10 @@ class Glitter{
         this.direction = [];
         this.radius = [];
         //initial particle
+        this.base = density;
         this.density = density;
-        for(let i =0;i<density;i++){
+        this.limit = 150;
+        for(let i =0;i<150;i++){
             this.pos[i] = [random(10,width),-10];
             this.direction[i] = createVector(random(-3,3),random(1.5,3));
             this.direction[i].normalize();
@@ -21,7 +24,7 @@ class Glitter{
         this.buffer.noStroke();
         this.height = height/3;
         this.buffer.blendMode(ADD);
-
+        console.log("Glitter assigned");
     }
     //reuse properties
     reset(position,bound){

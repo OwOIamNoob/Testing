@@ -1,20 +1,28 @@
 class Bot{
     //initial 
-    constructor(path,size){
+    constructor(library,size){
         //database
-
-        this.library = loadStrings(path);
-        for(let i = 0; i < this.library.length;i++){
-            if(this.library[i].length != size){ 
-                this.library.splice(i,1);
-                i--;
+        this.library = [];
+        for(let i = 0; i < library.length;i++){
+            let temp = splitTokens(library[i],';');
+            if(temp[0].length == size){ 
+                this.library.push(temp[0]);
             }
         } 
+        // for(let i = 0; i < base.length;i++){
+        //     if(base[i].length == size){ 
+        //         this.library.push(base[i]);
+        //     }
+        // } 
         this.guessed = [];
         this.pronoun = ['A','E','I','O','U'];
+        console.log("Bot assigned");
+        console.log(this.library);
     }
+    addbase(base)
     //filtering
     filter(value,pos){
+        this.guessed.push(value);
         if(pos.length == 0){
             for(let i=0;i<this.library.length;i++){
                 //searching in streams
@@ -40,17 +48,25 @@ class Bot{
                  }
             }
         }
+        console.log("Database filtered");
+        console.log(this.library);
     }
     //guess 
+    included(value){
+        for(let i = 0;i<this.guessed.length;i++){
+            if(value == this.guessed[i]) return true;
+        }
+        return false;
+    }
     guess(){
-        let decision;
-        //blind guess
-        if(this.library.length  == 0 )
-            return String.fromCharCode(int(random(65,90.5)));
-        //guess
+        //return char,string
+        //pickout string
+        let choice = random(this.library);
+        if(choice.length == 0) choice =String.fromCharCode(random(65,90.5));
         if(this.guessed.length == 0) return random(this.pronoun);
-        
-        return random(random(this.library));
-        
+            for(let i = 0;i<choice.length;i++){
+                if(!this.included(choice[i])) return choice[i];
+            }
+        return choice[0];
     }
 }

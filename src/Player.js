@@ -1,10 +1,11 @@
 class Player{
-    constructor(Font,name){
-        this.object = new Objective(10,"player",11,Font,300,12,6);
-        this.object.lim = 2*width;
+    constructor(name){
+        this.object = new Objective(10,"player",11,300,width/200,6);
+        this.object.lim = 9*width/4;
         this.light= loadImage("assets/asset/animation/player/light.png");
         this.active = false;
         this.name = name;
+        console.log("Player " + this.name + " assigned");
     }
     //player movement
     move(){
@@ -25,9 +26,14 @@ class Player{
     show(){
         this.move();
         this.object.show();
-
+        push();
+            fill(0);
+            text(this.name,this.object.x,this.object.y - 10);
+         pop();
         if(this.active){
+            
             push();
+            
             blendMode(DODGE);
             image(this.light,this.object.x-10,this.object.y,height/2,height/6);
             pop();

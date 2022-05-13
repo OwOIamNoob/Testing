@@ -13,6 +13,7 @@ class Stellar{
             this.graphic[i] = new Suggestion(value,x,y,radius);
             console.log("suggest " + (i+1) + ":" + x + ' ' + y + ' ' + radius + ' ' + value);
         }
+        console.log(this.graphic.length + " suggestions assigned");
     }
     show(){
         for(let i = 0;i<this.size;i++) this.graphic[i].show();

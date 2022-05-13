@@ -11,20 +11,26 @@ class Input{
         for(let i = 0;i<size;i++){
             this.graphic[i] = new Character(this.x + (i-size/2+1/2)*this.c_size + 2*(i-size/2 + 2)*this.spacing,this.y,this.c_size/8,this.c_size/2,48,8,color(200+i/this.size*50,200 + i/this.size*20,230-i/this.size*150),true,0 );
         }
+        console.log("Input assigned");
     }
     typed(){
         if(this.active){
-            if(keyCode >= 65 && keyCode <= 90){
+            if((keyCode >= 65 && keyCode <= 90) || keyCode == 189 || keyCode == 48){
                 this.graphic[this.index].update(keyCode);
                 this.index = min(this.size - 1,this.index +1);
-                
             }
-            else if(keyCode == 8)
+            //backspace
+            if(keyCode == 8)
             {
                 // console.log('current index value: ' + this.graphic[this.index].assemble) + ' at index' + this.index;
                 if(this.graphic[this.index].assemble == 48 && this.index > 0) this.index --; 
                 this.graphic[this.index].update(48);
             }
+        }
+    }
+    botadd(string){
+        for(let i = 0;i<this.graphic.length;i++){
+            this.graphic[i].update(string.charCodeAt(i));
         }
     }
     reset(){
@@ -41,7 +47,8 @@ class Input{
         let value = '';
         for(let i = 0;i<=this.index;i++){
             if(this.graphic[i].assemble == 48) break;
-            value += String.fromCharCode(this.graphic[i].assemble);
+            if(this.graphic[i].assemble == 189) value += '-';
+            else    value += String.fromCharCode(this.graphic[i].assemble);
         }
         value = value.toUpperCase();
         console.log(value);
