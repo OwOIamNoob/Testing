@@ -2,10 +2,11 @@ class Bot{
     //initial 
     constructor(library,size){
         //database
+        console.log(library);
         this.library = [];
         for(let i = 0; i < library.length;i++){
             let temp = splitTokens(library[i],';');
-            if(temp[0].length == size){ 
+            if(temp && temp[0].length == size){ 
                 this.library.push(temp[0]);
             }
         } 
@@ -14,6 +15,13 @@ class Bot{
         this.pronoun = ['A','E','I','O','U'];
         console.log("Bot assigned");
         console.log(this.library);
+    }
+    addon(base){
+        for(let i = 0; i < base.length; i++){
+            if(base[i].length == this.library[0].length){ 
+                this.library.push(base[i]);
+            }
+        }
     }
     //filtering
     filter(value,pos){

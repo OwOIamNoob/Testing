@@ -72,7 +72,7 @@ class Menu{
     }
     //create gameplay
     saving(){
-        let data = [str(this.name.value()),str(this.level.value()),this.categories.value()] ;
+        let data = [str(this.name.value()),str(this.level.value()),this.categories.value(),this.target.value()] ;
         this.active = false;
         this.name.hide();
         this.level.hide();

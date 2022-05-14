@@ -2,7 +2,8 @@ class Gameplay{
     constructor(name,difficulty,library,fail,hint){
         //game is going
         this.hold = true;
-        console.log(this.library);
+        this.bot_play = false;
+        console.log("library:" +library);
         //general information
         this.bonus = 25*difficulty;
         this.attempt = 18 - difficulty * 3;
@@ -13,7 +14,7 @@ class Gameplay{
         
         this.lib = library;
         this.answer = splitTokens(random(this.lib),';');
-        console.log(this.answer);
+        console.log("Answer: " + this.answer);
         this.fail = fail;
         this.hint = hint;
         console.log( this.fail);
@@ -58,7 +59,7 @@ class Gameplay{
     }
     //interaction
     clicked(){
-        if(!this.allow) return ;
+        if(!this.allow && !this.bot_play) return ;
         //click on suggestion 
         if(this.suggestion.clicked()){
             this.penalty = max(1-this.degrade*this.suggestion.graphic.length,this.penalty - this.degrade) ;
@@ -167,7 +168,7 @@ class Gameplay{
     //time management
     timeflag(){
         //bot guess
-        if(frameCount/30 - this.moon.time_started >= 3*this.moon.period/4 && this.guess.assemble == 48 && !this.input.active && this.allow){
+        if(frameCount/30 - this.moon.time_started >= 3*this.moon.period/4 && this.guess.assemble == 48 && !this.input.active && (this.allow || this.bot_play)){
             let auto = this.bot.guess();
             this.guess.update(auto.charCodeAt(0));
         } 
@@ -180,14 +181,16 @@ class Gameplay{
     show(){
         background(this.bg);
         if(!this.hold) return ;
-        if(frameCount < this.time || this.status != 0 || this.quest.done || this.surface.content.length == this.failure ){
+        if(frameCount < this.time || this.status != 0 || this.quest.done || this.surface.content.length == this.failure || this.bot_play){
             this.allow = false;
             push();
             blendMode(DODGE);
             textAlign(CENTER);
             fill(240,200,50);
             textSize(50);
+            if(!this.bot_play)
             text("HOLD",width/2,height/3);
+            else text("BOT PLAY",width/2,height/3);
             pop();
         } 
         else this.allow = true;
