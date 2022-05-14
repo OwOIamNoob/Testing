@@ -9,17 +9,12 @@ class Bot{
                 this.library.push(temp[0]);
             }
         } 
-        // for(let i = 0; i < base.length;i++){
-        //     if(base[i].length == size){ 
-        //         this.library.push(base[i]);
-        //     }
-        // } 
+
         this.guessed = [];
         this.pronoun = ['A','E','I','O','U'];
         console.log("Bot assigned");
         console.log(this.library);
     }
-    addbase(base)
     //filtering
     filter(value,pos){
         this.guessed.push(value);

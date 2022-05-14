@@ -2,7 +2,7 @@ class Gameplay{
     constructor(name,difficulty,library,fail,hint){
         //game is going
         this.hold = true;
-        console.log(this.hold);
+        console.log(this.library);
         //general information
         this.bonus = 25*difficulty;
         this.attempt = 18 - difficulty * 3;
@@ -16,7 +16,7 @@ class Gameplay{
         console.log(this.answer);
         this.fail = fail;
         this.hint = hint;
-        console.log("Fail : " + this.fail.length);
+        console.log( this.fail);
         //interactive object initials
         //
         this.player = new Player(name); /*6*/
@@ -28,8 +28,8 @@ class Gameplay{
         this.guess = new Character(width/2,2*height/3,height/10,height/6,48,15,color(116,35,35),false,0);/*2*/
         if(this.guess) console.log("Guess assigned");
         this.suggestion = new Stellar(6,this.input.y,this.input.c_size/2,this.answer[0]); /*3*/
+        console.log("Bot library: " + library.length + " length: " + this.answer[0].length);
         this.bot  = new Bot(library,this.answer[0].length);
-        console.log(this.bot.library);
         //background objects
         //
         this.bg = loadImage("assets/object/background.png");

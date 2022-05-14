@@ -34,12 +34,12 @@ EMERGENCY;khan cap
 EXTERNAL;ben ngoai
 INTERNAL;ben trong
 INSECURE;khong an toan
-CONTENT;su vui mung 
+CONTENT;su vui mung
 INNERSELF;tam hon ben trong
 MAINTAIN;duy tri
 APPOINTMENT;cuoc hen
 PHYSICIAN;bac si
-COUNSELLOR;nguoi tam li 
+COUNSELLOR;nguoi tam li
 ADVISOR;nguoi dua ra loi khuyen
 ADDICTION;su nghien ngap
 ADDICTED;con nghien
@@ -50,4 +50,4 @@ SUBTLE;mo nhat
 BREAKDOWN;pha vo
 STRUGGLE;tranh dau
 STRANDED;mac ket
-TERMINOLOGY;thuat ngu 
+TERMINOLOGY;thuat ngu

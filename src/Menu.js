@@ -1,6 +1,7 @@
 class Menu{
     constructor(){
         //background
+        this.active = true;
         this.order = 0;
         this.screen = new Background(100,2,2,0);
         this.title  = new Word(width/2,height/5,'EMOTION','HANGMAN',10,80,15,8,color(190,20,20));
@@ -51,31 +52,37 @@ class Menu{
         
         this.screen.show();
         this.title.display();
-        push();
+        
         image(this.API,0,0,width,height);
+        push();
         if(mouseX >= 4*width/5 && mouseX <= 4*width/5+120 && mouseY >= height/2 && mouseY <= height/2+120) tint(255,0,0);
         image(this.icon,4*width/5,height/2);
         pop();
     }    
-    saving(name,level,theme){
-        name = str(this.name.value());
-        level =int(this.level.value());
-        theme = str(this.categories.value());
+    reset(){
+        this.active = true;
+        this.screen.reset(true);
+        this.name.value('');
+        this.level.value(1);
+        this.target.value('');
+        this.name.show();
+        this.level.show();
+        this.categories.show();
+        this.target.show();
+    }
+    //create gameplay
+    saving(){
+        let data = [str(this.name.value()),str(this.level.value()),this.categories.value()] ;
+        this.active = false;
         this.name.hide();
         this.level.hide();
         this.categories.hide();
         this.target.hide();
-    }
-    reset(){
-
-        this.name.value('');
-        this.level.value(1);
-        this.target.value('');
-        this.screen.reset(true);
+        return data;
     }
      
     clicked() {
-        if(mouseX >= 4*width/5 && mouseX <= 4*width/5+120 && mouseY >= height/2 && mouseY <= height/2+120) this.reset();
+        if(mouseX >= 4*width/5 && mouseX <= 4*width/5+120 && mouseY >= height/2 && mouseY <= height/2+120) return this.saving();
     }
     
 }
