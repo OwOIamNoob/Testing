@@ -85,6 +85,11 @@ function mouseClicked(){
     // start_sound.stop();
   } 
   else if(game.hold) game.clicked();
+  else if(ended){
+    end[game.status].stop();
+    game = null;
+    menu.reset();
+  }
 }
 function keyTyped(){
   if(game){
