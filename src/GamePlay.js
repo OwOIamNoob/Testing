@@ -3,6 +3,7 @@ class Gameplay{
         //game is going
         this.hold = true;
         this.bot_play = false;
+        this.count = 0;
         console.log("library:" +library);
         //general information
         this.bonus = 25*difficulty;
@@ -69,7 +70,7 @@ class Gameplay{
         this.player.clicked(this.bound); 
         this.opponent.clicked(this.bound);
         //switch 
-        if(mouseY >= this.input.y - this.input.c_size/2 && mouseY <= this.input.y + this.input.c_size/2){
+        if(mouseY >= this.input.y - this.input.c_size/2 && mouseY <= this.input.y + this.input.c_size/2 && !this.bot_play){
             this.input.reset();
             this.input.active = !this.input.active;
             this.player.object.dialog.push("I am guessing a " + (this.input.active ? 'word':'letter'),true);
@@ -102,6 +103,7 @@ class Gameplay{
                     this.update(false);
                   }
                   else{
+                    this.original += this.bonus*1.5*(this.answer[0].length - this.quest.num);
                     this.opponent.object.dialog.push("Yes;Yes it is;Thank you",true);
                     this.opponent.object.speed = -this.opponent.object.speed;
                     this.opponent.distance = 3*width;
@@ -156,7 +158,7 @@ class Gameplay{
     endgame(){
         //game ending 
         if(this.opponent.object.x == this.opponent.object.lim) this.status = -1;
-        else if(this.opponent.object.x - this.player.object.x  <= 2) this.status = 1;
+        if(this.opponent.object.x - this.player.object.x  <= 2 || this.opponent.object.x <= 10) this.status = 1;
         //ensure game 
         if(this.quest.done){
                 this.opponent.object.speed = -5;
@@ -193,7 +195,10 @@ class Gameplay{
             else text("BOT PLAY",width/2,height/3);
             pop();
         } 
-        else this.allow = true;
+        else {
+            this.allow = true;
+            this.count ++;
+        }
         //bg
         
         //effect
@@ -228,7 +233,7 @@ class Gameplay{
         this.surface.show(this.bound);
         this.foreground.show(this.bound);
         pop();
-        this.original = max(0,this.original - this.degrade);
+        this.original = max(0,this.original - this.degrade/3);
         this.score = int(this.original*this.penalty);
         //game auto edging
         this.endgame();

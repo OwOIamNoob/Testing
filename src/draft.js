@@ -1,5 +1,7 @@
 var game;
 var menu;
+let score_bg;
+var score;
 var lib;
 let fail,hint;
 let bound = 0;
@@ -21,7 +23,10 @@ function onSoundLoadProgress(e){
 }
 //preload
 function preload(){
+  //needed things
   lib = loadStrings("assets/context/content/3/sport.txt");
+  score = loadTable("assets/context/score/scoreboard.csv",'csv','header');
+  score_bg = loadImage("assets/object/scoreboard.png");
   //static import
   fail = loadStrings("assets/context/dialog/Fail.txt");
   hint = loadStrings("assets/context/dialog/Hint.txt");
@@ -47,11 +52,17 @@ function setup(){
   let cnv = createCanvas(displayHeight*4/3,displayHeight);
   cnv.parent('sketchHolder');
   console.log(lib);
-  menu = new Menu(); 
+  menu = new Menu(score,score_bg); 
   // a.bot.addbase(base);
 }
 function draw(){
-    background(50);
+    background(10);
+    push();
+    fill(255);
+    textSize(height/5);
+    textAlign(CENTER);
+    text("Click me",width/2,height/2);
+    pop();
     //menu manage
     if(menu.active) menu.show();
     else if(!game) image(start,0,0,width,height);
@@ -69,29 +80,39 @@ function draw(){
 }
 function mouseClicked(){
   if(menu.active){
-    data = menu.clicked();
-    if(data){
-      console.log(data);
-      loadlibrary();
-      start.play();
-      console.log(lib);
+    if(mouseY < height/4) menu.switch();
+    else{
+      data = menu.clicked();
+      if(data){
+        console.log(data);
+        loadlibrary();
+        start.play();
+        console.log(lib);
+      }
     } 
   }
   else if(!game){
-    game = new Gameplay('Lmao',2,lib,fail,hint);
+    game = new Gameplay(data[0],2,lib,fail,hint);
     start.stop();
     game.bot.addon(base);
-    if(lib.length == 1) game.bot_play = true;
+    if(lib.length == 1){
+      game.bot_play = true;
+      game.player.name = "Bot";
+    } 
     // start_sound.stop();
   } 
   else if(game.hold) game.clicked();
   else if(ended){
+    hint.pop();
+    menu.score.add(game.player.name,data[2],int(data[1]),game.score,int(game.count/30),game.status);
     end[game.status].stop();
+    console.log(game.player.name + " " + game.status + " " + game.score + " " + int(game.count/30));
     game = null;
     menu.reset();
+    ended = false;
   }
 }
-function keyTyped(){
+function keyPressed(){
   if(game){
     if(game.hold) game.typed();
   }
@@ -107,5 +128,7 @@ function loadlibrary(){
     //man play 
     else
     lib = loadStrings("assets/context/content/" + data[1] + "/" + data[2] + ".txt");
-    
+}
+function mouseWheel(event){
+  if(menu.active && !menu.view) menu.score.scrolled(event.delta);
 }

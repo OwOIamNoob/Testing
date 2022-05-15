@@ -1,10 +1,12 @@
+
 class Menu{
-    constructor(){
+    constructor(table,bg){
         //background
         this.active = true;
-        this.order = 0;
+        this.view = true;
         this.screen = new Background(100,2,2,0);
-        this.title  = new Word(width/2,height/5,'EMOTION','HANGMAN',10,80,15,8,color(190,20,20));
+        this.title  = new Word(width/2,height/5,'SCORE0BOARD','THE0HANGMAN',20,80,15,8,color(190,20,20));
+        this.score_title  = new Word(width/2,height/5,'RETURN0MENU','SCORE0BOARD',20,80,15,8,color(190,20,20));
         this.API = loadImage("assets/asset/start/text.png");
         this.icon = loadImage("assets/asset/icon/start.png");
         //buffer
@@ -47,42 +49,68 @@ class Menu{
         this.target.style('color','#ff0000');
         this.target.style('font-size','50px');
         //onscreen
+        //scoreboard
+        this.score = new Scoreboard(table,bg);
     }
     show() { 
         
         this.screen.show();
-        this.title.display();
+        if(this.view){
+            this.title.display();
+            image(this.API,0,0,width,height);
+            push();
+                if(mouseX >= 4*width/5 && mouseX <= 4*width/5+120 && mouseY >= height/2 && mouseY <= height/2+120) tint(255,0,0);
+                image(this.icon,4*width/5,height/2);
+                // noFill();
+                // strokeWeight(5);
+                // // rect(width/4,height/5-120,width/2,80);
+            pop();
+        }   
+        else {
+            this.score_title.display();
+            this.score.show();
+        } 
         
-        image(this.API,0,0,width,height);
-        push();
-        if(mouseX >= 4*width/5 && mouseX <= 4*width/5+120 && mouseY >= height/2 && mouseY <= height/2+120) tint(255,0,0);
-        image(this.icon,4*width/5,height/2);
-        pop();
+        
     }    
+    hiding(){
+        this.name.hide();
+        this.level.hide();
+        this.categories.hide();
+        this.target.hide();
+    }
+    showup(){
+        this.name.show();
+        this.level.show();
+        this.categories.show();
+        this.target.show();
+    }
     reset(){
         this.active = true;
         this.screen.reset(true);
         this.name.value('');
         this.level.value(1);
         this.target.value('');
-        this.name.show();
-        this.level.show();
-        this.categories.show();
-        this.target.show();
+        this.showup();
     }
     //create gameplay
     saving(){
         let data = [str(this.name.value()),str(this.level.value()),this.categories.value(),this.target.value()] ;
         this.active = false;
-        this.name.hide();
-        this.level.hide();
-        this.categories.hide();
-        this.target.hide();
+        this.hiding();
         return data;
     }
-     
+    //switch mode 
+    switch(){
+        // if(mouseY >= height/5 - 120 && mouseY <= height/50 - 40){
+            this.view = !this.view;
+            console.log(this.view);
+            if(this.view) this.showup();
+            else this.hiding();
+        // }
+    }
     clicked() {
-        if(mouseX >= 4*width/5 && mouseX <= 4*width/5+120 && mouseY >= height/2 && mouseY <= height/2+120) return this.saving();
+        if(mouseX >= 4*width/5 && mouseX <= 4*width/5+120 && mouseY >= height/2 && mouseY <= height/2+120 && this.view) return this.saving();
     }
     
 }
