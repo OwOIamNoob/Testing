@@ -49,7 +49,7 @@ class Converse{
             this.pos = 0;
             this.time = frameCount;
             this.active = true;
-            console.log(this.dialog);
+            // console.log(this.dialog);
         }
         
     }
