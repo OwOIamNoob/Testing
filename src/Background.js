@@ -10,7 +10,7 @@ class Background{
     this.selector = str(int(random(1,5.9))) + '.png';
     this.ref = loadImage('assets/asset/start/' + this.selector);
     console.log("image " + this.ref.width + " " + this.ref.height);
-    console.log(this.buffer.width + ' ' + this.buffer.height);
+    // console.log(this.buffer.width + ' ' + this.buffer.height);
     
     //transparent or not
     if(bg < 255)  this.buffer.background(bg);

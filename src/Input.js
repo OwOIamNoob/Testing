@@ -51,7 +51,7 @@ class Input{
             else    value += String.fromCharCode(this.graphic[i].assemble);
         }
         value = value.toUpperCase();
-        console.log(value);
+        // console.log(value);
         return value;
     }
 }

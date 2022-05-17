@@ -5,18 +5,18 @@ class Fence{
         this.ref = [];
         this.total = int(random(limit - width/2,limit - width/6));
         this.width = int(this.total/divisor);
-        console.log('width: ' + this.width);
+        // console.log('width: ' + this.width);
         this.begin = int(width/6);
         for(let i = 0;i<7;i++){
             this.ref[i] = loadImage('assets/object/fence' + i+'.png');
         }
-        console.log('fence :' + this.ref.length);
+        // console.log('fence :' + this.ref.length);
         this.obj = [];
 
         for(let i =0;i<this.size;i++){
             this.obj[i] = int(random(-3,6.5));
         }
-        console.log('fence style ' + this.obj);
+        // console.log('fence style ' + this.obj);
         this.start = loadImage("assets/object/kiot.png");
     }
     show(x){

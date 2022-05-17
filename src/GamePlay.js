@@ -18,7 +18,7 @@ class Gameplay{
         // console.log("Answer: " + this.answer);
         this.fail = fail;
         this.hint = hint;
-        console.log( this.fail);
+        // console.log( this.fail);
         //interactive object initials
         //
         this.player = new Player(name); /*6*/

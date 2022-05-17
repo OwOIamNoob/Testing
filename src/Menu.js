@@ -105,7 +105,7 @@ class Menu{
         // if(mouseY >= height/5 - 120 && mouseY <= height/50 - 40){
             this.view = !this.view;
             this.score.his = -1;
-            console.log(this.view);
+            // console.log(this.view);
             if(this.view) this.showup();
             else this.hiding();
         // }
