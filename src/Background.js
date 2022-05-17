@@ -1,10 +1,13 @@
+//disable friendly errors
+
+p5.disableFriendlyErrors = true;
 class Background{
   constructor(number,delay,lim,bg){
     this.pointer = [];
     this.radius = displayHeight/4;
     this.buffer = createGraphics(width,height);
     this.buffer.noStroke();
-    this.selector = str(int(random(1,3.8))) + '.png';
+    this.selector = str(int(random(1,5.9))) + '.png';
     this.ref = loadImage('assets/asset/start/' + this.selector);
     console.log("image " + this.ref.width + " " + this.ref.height);
     console.log(this.buffer.width + ' ' + this.buffer.height);
@@ -63,7 +66,7 @@ class Background{
     if(!finish) this.buffer.image(this.ref,0,0,width,height);
     else this.buffer.clear();
     this.radius = displayHeight/4;
-    this.selector = str(int(random(1,3.8))) + '.png';
+    this.selector = str(int(random(1,5.9))) + '.png';
     this.ref = loadImage('assets/asset/start/' + this.selector);
     this.delay = 30;
   }

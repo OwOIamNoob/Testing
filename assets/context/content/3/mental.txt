@@ -1,29 +1,29 @@
-INCONCLUSIVE;thieu tinh ket luan
-FRACTURED;bi nut vo
-FATAL;gay tu vong
-DEMENTIA;sa sut tri tue
-COMPULSIVE;ep buoc
-INSOMNIA;chung mat ngu
-BIPOLAR;luong cuc
-VESTIBULE;tien dinh
-RESIDENTIAL;khu can cu
-OUTPATIENT;benh nhan ngoai tru
-AHDH;roi loan tang dong
-AUTISTIC;mang tinh tu ki
-AUTISM;chung tu ki
-DEPERSONALIZATION;phi ca nhan hoa
-DYSREGULATION;roi loan dieu tiet
-PERFECTIONISM;chu nghia hoan hao
-PHOBIA;am anh
-KLEPTOMANIA;hoi chung an cap vat
-ANOREXIA;chung chan an
-ANTISOCIAL;chong doi xa hoi
-ATTACHMENT;thu di kem
-DISSOCIATIVE;mang tinh tach roi
-ASSOCIATE;ket hop
-DYSMORPHIC;mang tinh roi loan chuc nang
-DYSPHORIA;roi loan chuc nang
-SYNDROME;trieu chung
-SCHIZOPHRENIA;tam than phan liet
-DEPENDENCE;su phu thuoc
-PYROMANIA;hoi chung dien
+INCONCLUSIVE;thiếu tính kết luận
+FRACTURED;bị nứt vỡ
+FATAL;gây tử vong
+DEMENTIA;sa sút trí tuệ
+COMPULSIVE;ép buộc
+INSOMNIA;chứng mất ngủ
+BIPOLAR;lưỡng cực
+VESTIBULE;tiền đình
+RESIDENTIAL;khu dân cư
+OUTPATIENT;bệnh nhân ngoại trú
+AHDH;rối loạn tăng động
+AUTISTIC;mang tính tự kỉ
+AUTISM;chứng tự kỉ
+DEPERSONALIZATION;phi cá nhân hoá
+DYSREGULATION;rối loạn điều tiết
+PERFECTIONISM;chủ nghĩa hoàn hảo
+PHOBIA;ám ảnh
+KLEPTOMANIA;hội chứng ăn cắp vặt
+ANOREXIA;chứng chán ăn
+ANTISOCIAL;chống đối xã hội
+ATTACHMENT;thứ đi kèm
+DISSOCIATIVE;mang tính tách rời
+ASSOCIATE;kết hợp
+DYSMORPHIC;mang tính rối loạn chức năng
+DYSPHORIA;rối loạn chức năng
+SYNDROME;triệu chứng
+SCHIZOPHRENIA;tâm thần phân liệt
+DEPENDENCE;sự phu thuộc
+PYROMANIA;hội chứng điên

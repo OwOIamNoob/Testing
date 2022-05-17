@@ -1,6 +1,6 @@
 class Player{
     constructor(name){
-        this.object = new Objective(10,"player",11,300,width/200,6);
+        this.object = new Objective(10,"player",11,300,width/150,6);
         this.object.lim = 9*width/4;
         this.light= loadImage("assets/asset/animation/player/light.png");
         this.active = false;

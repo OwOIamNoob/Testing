@@ -1,7 +1,7 @@
 class Converse{
     constructor(size,delay){
         //style
-        this.Font = loadFont("assets/font/MorrisRomanBlack.ttf");
+        this.Font = loadFont("assets/font/UVNAiCapNang.TTF");
         this.size = size;
         //animation
         this.speed = 3 * 255/(delay);
@@ -45,7 +45,7 @@ class Converse{
     }
     push(inp,prior){
         if(this.dialog.length == 0 || prior){
-            this.dialog = splitTokens(inp, ';');
+            if(inp)    this.dialog = inp.split(";");
             this.pos = 0;
             this.time = frameCount;
             this.active = true;

@@ -24,7 +24,6 @@ class Gameplay{
         this.player = new Player(name); /*6*/
         this.opponent = new Opponent(this.hint);/*7*/
         //addition
-        
         this.input = new Input(this.answer[0].length);/*4*/
         this.quest = new Quest(this.answer[0]); /*4*/ 
         this.guess = new Character(width/2,2*height/3,height/10,height/6,48,15,color(116,35,35),false,0);/*2*/
@@ -63,7 +62,7 @@ class Gameplay{
         if(!this.allow && !this.bot_play) return ;
         //click on suggestion 
         if(this.suggestion.clicked()){
-            this.penalty = max(1-this.degrade*this.suggestion.graphic.length,this.penalty - this.degrade) ;
+            this.penalty = max(1-this.degrade*this.suggestion.graphic.length*2,this.penalty - this.degrade*2) ;
             this.score = this.original*this.penalty;
         } 
         //object interaction
@@ -83,7 +82,7 @@ class Gameplay{
         if(status == false){
             this.opponent.distance += width/this.failure;
             this.opponent.object.dialog.push(random(this.fail),true);
-            this.original -= this.bonus;
+            this.original -= this.bonus/2;
         }
         else {
             this.opponent.object.dialog.push('Yes, it has',true);
@@ -164,19 +163,32 @@ class Gameplay{
                 this.opponent.object.speed = -5;
                 this.opponent.distance = 3*width;
         }
+        if(this.surface.content.length == this.failure && !this.bot_play) this.opponent.distance = 3*width;
         //stop displaying 
         if(this.status != 0) this.hold = false;
     }
     //time management
     timeflag(){
-        //bot guess
-        if(frameCount/30 - this.moon.time_started >= 3*this.moon.period/4 && this.guess.assemble == 48 && !this.input.active && (this.allow || this.bot_play)){
-            let auto = this.bot.guess();
-            this.guess.update(auto.charCodeAt(0));
-        } 
-        //
-        if(frameCount/30 - this.moon.time_started >= this.moon.period){
-            this.check();
+        if(!this.bot_play){
+//bot guess
+            if(frameCount/30 - this.moon.time_started >= 3*this.moon.period/4 && this.guess.assemble == 48 && !this.input.active && (this.allow || this.bot_play)){
+                let auto = this.bot.guess();
+                this.guess.update(auto.charCodeAt(0));
+            } 
+            //
+            if(frameCount/30 - this.moon.time_started >= this.moon.period){
+                this.check();
+            }
+        }
+        else {
+            if(frameCount/30 - this.moon.time_started >= this.moon.period/3 && this.guess.assemble == 48 && !this.input.active && (this.allow || this.bot_play)){
+                let auto = this.bot.guess();
+                this.guess.update(auto.charCodeAt(0));
+            } 
+            //
+            if(frameCount/30 - this.moon.time_started >= this.moon.period/2){
+                this.check();
+            }
         }
     }
     //displaying
@@ -197,10 +209,10 @@ class Gameplay{
         } 
         else {
             this.allow = true;
-            this.count ++;
+            
         }
         //bg
-        
+        if(this.allow) this.count ++;
         //effect
         this.glitter.show(height/3,this.bound);
         //clock 
@@ -238,5 +250,9 @@ class Gameplay{
         //game auto edging
         this.endgame();
         this.timeflag();
+        if(this.count/30 % this.period == 0 && this.quest.num >= this.quest.ans.length - 3 && this.allow && this.quest.num > 0){
+            this.opponent.object.dialog.push("Maybe it is \n\n" + random(this.bot.library),true);
+            console.log(this.count);
+        }  
     }
 }

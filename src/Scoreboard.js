@@ -1,5 +1,5 @@
 class Scoreboard{
-    constructor(target,bg){
+    constructor(bg){
         this.table = [];
         this.bound = 1;
         this.his = 0;
@@ -14,17 +14,19 @@ class Scoreboard{
     }
     //add player
     add(name,theme,mode,score,g_time,status){
-        this.table.push(new Data(name,theme,mode,score,g_time,status,(this.table.length + 1/2)*this.wide));
+        this.table[this.table.length]=new Data(name,theme,mode,score,g_time,status,(this.table.length + 1/2)*this.wide);
         console.log(this.table[this.table.length -1].name + " "
         + this.table[this.table.length -1].theme + " "
         + this.table[this.table.length -1].score + " "
         + this.table[this.table.length -1].g_time + " ")
+        console.log("Data updated");
     }
     draw(){
+        this.buffer.clear();
         this.buffer.background(this.bg);
         this.buffer.push();
         this.buffer.translate(0,-this.bound);
-        for(let i = max(0,int(this.bound/this.wide - 1/2));i < min(this.table.length,int(this.bound/this.wide) + 5);i++)
+        for(let i = (this.table.length <= 5 ? 0:max(0,int(this.bound/this.wide - 1/2)));i < min(this.table.length,this.bound/this.wide + 5);i++)
         {
             this.table[i].draw(this.buffer);
         }

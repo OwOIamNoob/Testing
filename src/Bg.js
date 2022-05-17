@@ -16,7 +16,7 @@ class Bg{
                 break;
             }
         }
-        this.font = loadFont("assets/font/score.ttf");
+        this.font = loadFont("assets/font/led_counter-7_italic.ttf");
     }
     show(score,x){
         let pos = this.begin;
@@ -45,7 +45,8 @@ class Bg{
                             push();
                             textAlign(CENTER);
                             textFont(this.font);
-                            fill(0);
+                            strokeWeight(width/100);
+                            fill(250,150,50);
                             textSize(this.width[i]/(2*score.length))
                             text(str(score),pos+this.width[i]/2,5*height/6 - 2*h/3);
                             pop();

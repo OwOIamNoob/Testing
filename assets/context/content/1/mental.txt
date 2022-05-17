@@ -1,32 +1,31 @@
 HAPPY;vui
-SAD;buon 
-MENTAL;tinh than
-PSYCHOLOGY;tam li hoc
-PSYCH;ke tam than
-ILLNESS;benh tat
-HUNGRY;doi
-DISORDER;chung roi loan
-FEELING;cam gian
-THOUGHTFUL;chu dao
-THINK;suy nghi
-ACHE;con dau 
-AUDITION;tu ki
-ACTIVE;chu dong 
-LACK;thieu sot
-LUSTFUL;dam dang
-GUILTY;cam giac toi loi
-ANGUISH;dau kho
-ANXIETY;su lo au
-PATIENT;benh nhan
-THIRSTY;khat nuoc
-CONSIOUS;tinh tao
-UNCONSIOUS;khong tinh tao
-MOBILE;tinh hay thay doi 
-OPTIMISTIC;lac quan
-ENTHUSIATIC;nang dong
-FEVER;con sot
-WORRY;lo lang
-SECURED;an toan
-OPTIMISM;chu nghia lac quan
-ANALYZE;phan tich
-THRUST;dua day
+SAD;buồn 
+MENTAL;tinh thần
+PSYCHOLOGY;tâm lí học
+PSYCH;kẻ tâm thần
+ILLNESS;bệnh tật
+HUNGRY;đói
+DISORDER;chứng rối loạn
+FEELING;cảm giác
+THOUGHTFUL;chu đáo
+THINK;suy nghĩ
+ACHE;con đau 
+AUDITION;tự kỉ
+ACTIVE;chủ động 
+LACK;thiếu sót
+GUILTY;cảm giác tội lỗi
+ANGUISH;đau khổ, dằn vặt
+ANXIETY;sự lo âu
+PATIENT;bệnh nhân
+THIRSTY;khát nước
+CONSIOUS;tỉnh táo
+UNCONSIOUS;không tỉnh táo
+MOBILE;tính khí thất thường 
+OPTIMISTIC;lạc quan
+ENTHUSIATIC;năng động
+FEVER;cơn sốt
+WORRY;lo lắng
+SECURED;an toàn
+OPTIMISM;chủ nghĩa lạc quan
+ANALYZE;phân tích
+THRUST;đưa đẩy

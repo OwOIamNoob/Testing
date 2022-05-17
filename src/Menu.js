@@ -1,12 +1,12 @@
 
 class Menu{
-    constructor(table,bg){
+    constructor(bg){
         //background
         this.active = true;
         this.view = true;
         this.screen = new Background(100,2,2,0);
-        this.title  = new Word(width/2,height/5,'SCORE0BOARD','THE0HANGMAN',20,80,15,8,color(190,20,20));
-        this.score_title  = new Word(width/2,height/5,'RETURN0MENU','SCORE0BOARD',20,80,15,8,color(190,20,20));
+        this.title  = new Word(width/2,height/5,'SCORE0BOARD','THE0HANGMAN',20,4*width/55,width/110,8,color(190,20,20));
+        this.score_title  = new Word(width/2,height/5,'RETURN0MENU','SCORE0BOARD',20,4*width/55,width/110,8,color(190,20,20));
         this.API = loadImage("assets/asset/start/text.png");
         this.icon = loadImage("assets/asset/icon/start.png");
         //buffer
@@ -50,7 +50,7 @@ class Menu{
         this.target.style('font-size','50px');
         //onscreen
         //scoreboard
-        this.score = new Scoreboard(table,bg);
+        this.score = new Scoreboard(bg);
     }
     show() { 
         
@@ -104,6 +104,7 @@ class Menu{
     switch(){
         // if(mouseY >= height/5 - 120 && mouseY <= height/50 - 40){
             this.view = !this.view;
+            this.score.his = -1;
             console.log(this.view);
             if(this.view) this.showup();
             else this.hiding();

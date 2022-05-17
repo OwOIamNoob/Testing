@@ -1,85 +1,84 @@
-ATHLETICS;the van hoi
-RUNNING;cuoc thi chay 
-RACE;cuoc dua 
-DISTANCE;khoang cach 
-PROFESSIONAL;chuyen nghiep
-CHAMPIONSHIP;chuc quan quan 
-COMPETITION;cuoc thi 
-HURDLE;hang rao 
-OLYMPICS;the van hoi the gioi
-RACKET;vot 
-EXERCISE;bai tap 
-TOURNAMENT;giai dau 
-COURT;san nha 
-BOUNCE;bat nhay 
-SMASH;dap manh xuong 
-SYSTEM;he thong 
-COMPETE;thi dau 
-QUALIFICATION;bang cap, chung chi 
-RANKINGS;xep hang 
-TACTICAL;mang tinh chien thuat 
-INSTRUCTOR;nguoi huong dan
-BASKETBALL;bong ro
-LEAGUE;lien doan
-SPRINGBOARD;ban dap 
-TECHNIQUE;ki thuat 
-GUARDING;canh gac 
-GYMNASTIC;the duc dung cu 
-ACROBATIC;nhao lon 
-BALANCE;can bang 
-TRAMPOLINE;tam bat lo xo 
-RHYTHM; nhip dieu 
-MEDLEY;cuoc danh nhau 
-DISMOUNT;thao roi 
-VAULT;khung vom 
-FREESTYLE;tu do phong cach 
-BACKSTROKE;boi ngua 
-STROKE;cheo lai thuyen 
-RECEIVER;nguoi nhan 
-BACKHAND;trai tay 
-ADVANTAGE;loi the 
-DISADVANTAGE;that the
-RACQUET;vot danh tennis 
-RALLY;tap hop 
-VOLLEY;chuyen 
-SKIER;nguoi truot tuyet 
-AERIAL;tren khong 
-ALPINE;nui cao 
-GATE;cong vao 
-BIND;troi buoc 
-GOGGLES;kinh mat 
-INCLINE;nghieng xuong 
-PEAKS;dinh cao 
-PENALTY;hinh phat 
-RIFLE;sung truong
-SLALOM;truot tuyet co chuong ngai vat
-SLOPE;con doc 
-TERRAIN;dia hinh 
-BOARDING;vi pham luat khi tan cong nguoi khac 
-CHARGE;thu lao 
-HELMET;mu bao hiem 
-ICING;dong bang 
-FRACTION;phan nho 
-RING;vong xuyen 
-POWER;suc manh 
-VIOLATION;su vi pham 
-INJURY;chan thuong
-BOUT;luot 
-CLINCH;ket thuc 
-CROSS;vuot qua 
-FOUL;su xam lan 
-GLOVES;gang tay 
-HOOK;moc vao
-KNOCKDOWN;ha guc 
-KNOCKOUT;cuoc dau vong loai 
-MATCH;van dau 
-NEUTRAL;trung tinh 
-PROMOTE;thang cap 
-FAILURE;su that bai 
-DEFENDER;nguoi phong thu 
-GOALKEEPER;thu mon 
-HANDBALL;bong nem 
-OFFSIDE;viet vi 
-SHOOTOUT;da luan luu
-TACKLE;giai quyet 
-RETURN; quay lai 
+ATHLETICS;thế vận hội
+RUNNING;cuộc thi chạy  
+DISTANCE;khoảng cách 
+PROFESSIONAL;chuyên nghiệp
+CHAMPIONSHIP;chức quán quân 
+COMPETITION;cuộc thi 
+HURDLE;hàng rào 
+OLYMPICS;thế vận hội thế giới
+RACKET;vợt 
+EXERCISE;bài tập 
+TOURNAMENT;giải đấu 
+COURT;sân nhà 
+BOUNCE;bật nhảy 
+SMASH;đập nát 
+SYSTEM;hệ thống 
+COMPETE;thi đấu 
+QUALIFICATION;bằng cấp, chứng chi 
+RANKINGS;xếp hạng 
+TACTICAL;mang tính chiến thuật 
+INSTRUCTOR;người hướng dẫn
+BASKETBALL;bóng rổ
+LEAGUE;liên đòan
+SPRINGBOARD;bàn đạp 
+TECHNIQUE;kĩ thuật 
+GUARDING;canh gác 
+GYMNASTIC;thể dục dụng cụ 
+ACROBATIC;nhào lộn 
+BALANCE;cân bằng 
+TRAMPOLINE;tấm bạt lò xo 
+RHYTHM; nhịp điệu 
+MEDLEY;cuộc đánh nhau 
+DISMOUNT;tháo rời 
+VAULT;khung vòm 
+FREESTYLE;tự do phong cách 
+BACKSTROKE;bơi ngựa 
+STROKE;chèo lái thuyền 
+RECEIVER;người nhận 
+BACKHAND;trái tay 
+ADVANTAGE;lợi thế 
+DISADVANTAGE;thất thế
+RACQUET;vợt đánh tennis 
+RALLY;tập hợp 
+VOLLEY;chuyền 
+SKIER;người trượt tuyết 
+AERIAL;trên không 
+ALPINE;núi cao 
+GATE;cổng 
+BIND;trói buộc 
+GOGGLES;kính mắt 
+INCLINE;nghiêng xuống 
+PEAKS;đỉnh cao 
+PENALTY;hình phạt 
+RIFLE;súng trường
+SLALOM;trượt tuyết có chướng ngại vật
+SLOPE;con dốc 
+TERRAIN;địa hình 
+BOARDING;vi phạm luật khi tấn công người khác 
+CHARGE;thù lao 
+HELMET;mũ bảo hiểm 
+ICING;đóng băng 
+FRACTION;phần nhỏ 
+RING;vòng xuyến 
+POWER;sức mạnh 
+VIOLATION;sự vi phạm 
+INJURY;chấn thương
+BOUT;lượt 
+CLINCH;kết thúc 
+CROSS;vượt qua 
+FOUL;sự xâm lấn 
+GLOVES;găng tay 
+HOOK;móc vao
+KNOCKDOWN;hạ guc 
+KNOCKOUT;vòng loại 
+MATCH;ván đấu 
+NEUTRAL;trung tính 
+PROMOTE;thăng cấp 
+FAILURE;sự thất bại 
+DEFENDER;nguoi phòng thủ 
+GOALKEEPER;thủ môn 
+HANDBALL;bóng ném 
+OFFSIDE;việt vị 
+SHOOTOUT;đá luân lưu
+TACKLE;giải quyết 
+RETURN; quay lại 

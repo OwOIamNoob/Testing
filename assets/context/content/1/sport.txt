@@ -1,64 +1,64 @@
-GAME;Mot tap hop cac hau qua co the kiem soat duoc
-PLAY;Hanh dong duy tri game
-STOP;Dung khong lam gi nua
-FAIL;That bai
-LOSE;Thua cuoc
-WIN;Thang cuoc
-TENNIS;quan vot
-BADMINTON;cau long
-RUN;chay
-RUSH;chay nuoc rut
-SPORT;the thao
-PLAYER;nguoi choi
+GAME;Một tập hợp các hậu quả có thể kiểm soát được
+PLAY;Hành động duy trì game 
+STOP;Dừng làm gì đó
+FAIL;Thất bại
+LOSE;Thua cuộc
+WIN;Thắng cuộc
+TENNIS;quần vợt
+BADMINTON;cầu lông
+RUN;chạy
+RUSH;chạy nước rút
+SPORT;thể thao
+PLAYER;người chơi
 SERVE;giao tranh
-SCORE;ghi ban
-SET;tap thi dau
-TIE;hoa
-NET;luoi
-GOAL;gon
-IDLE;tu the san sang
-BOXING;dam boc
-SWIMMING;boi loi
-GO;bat dau
-DIVE;xam nhap vao
-CLASS;phan hang
-RANGE;tam 
-LIMIT;gioi han
-SHOES;doi giay
-SOCKS;doi tat
-KICK;da
-BEGIN;bat dau
-START;bat dau
-DURATION;thoi gian
-RUGBY;bong bau duc
-GYM;the duc dung cu
-ADDITIVES;phu gia
-JOIN;gia nhap
-LEAVE;roi khoi
-THROW;nem
-SCOPE;tam ngam
-SCAN;quet
-STRIKE;tien cong
-STRONG;manh
-PASS;truyen
-ENTER;tien vao
-RACK;quan vot
-FLAG;cai co
-MEDAL;huan chuong
-CUP;cup vo dich
-PITCH;dinh diem
-CLUTCH;ban dap
-PACE;toc do
-PORT;cua khau
-PADDLE;cheo thuyen
-ACTION;hanh dong
-ENTERTAIN;giai tri
-MOTTO;cham ngon
-TEACH;day
-COACH;huan luyen
-TRAIN;tap luyen
-TRACK;theo dau
-LINE;hang
-LANE;mien
-LOCK;khoa
-ATHELETE;van dong vien
+SCORE;ghi bàn
+SET;một tập thi đấu
+TIE;hòa
+NET;lưới
+GOAL;gôn
+IDLE;tu thế sẵn sàng
+BOXING;đấm bốc
+SWIMMING;bơi lội
+GO;bắt đầu
+DIVE;xâm nhập vào
+CLASS;phân hạng
+RANGE;tầm
+LIMIT;giới hạn
+SHOES;đôi giày
+SOCKS;đôi tất
+KICK;đá
+BEGIN;bắt đầu
+START;bắt đầu
+DURATION;thời lượng
+RUGBY;bóng bầu dục 
+GYM;thể dục dụng cụ 
+ADDITIVES;phụ gia
+JOIN;gia nhập
+LEAVE;rời khỏi
+THROW;ném
+SCOPE;tầm ngắm
+SCAN;quét
+STRIKE;tiến công
+STRONG;mạnh
+PASS;chuyền
+ENTER;tiến vào
+RACK;quần vợt
+FLAG;cờ
+MEDAL;huân chương
+CUP;cúp vô địch
+PITCH;đỉnh điểm
+CLUTCH;bàn đạp
+PACE;tốc độ 
+PORT;cửa khẩu
+PADDLE;chèo thuyền
+ACTION;hành động
+ENTERTAIN;giải trí
+MOTTO;châm ngôn
+TEACH;dạy
+COACH;huấn luyện viên
+TRAIN;tập luyện
+TRACK;theo dấu
+LINE;hạng
+LANE;miền
+LOCK;khoá
+ATHELETE;vận động viên

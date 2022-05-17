@@ -1,26 +1,25 @@
-TIGHT;cang thang 
-JAVELIN;cay giao 
-HURDLES;nhay rao 
-HEPTATHLON;ba mon phoi hop 
-STEEPLECHASE;dua ngua nhay rao 
-BASELINE;vach co so 
-BIRDLE;day cuong 
-REARCOURT;vien khu vuc thi dau
-COUNTERPUNCH;dam moc ham 
-SOUTHPAW;vo si tay trai 
-SPARRING;dau tap 
-UNANIMOUS;bau cu 
-TOUCHLINE;duong bien 
-BOGEY;ma quy 
-HAZARDOUS;khac nghiet 
-MIDFIELDER;trung ve 
-GROUNDSTROKE;cham dat 
-UMPIRE;trong tai 
-HYDROBLADING;truot bang nghe thuat 
-SEQUENCE;trinh tu 
-INFIELDER;tien dao 
-OUTFIELDER;hau ve 
-INNING;hiep thi dau
-BOWLER;nguoi choi nem cau 
-CREASE;vach cho nguoi danh bong 
-WICKET;gon cua mon cricket 
+TIGHT;căng thẳng 
+HURDLES;nhảy rào 
+HEPTATHLON;ba môn phối hợp 
+STEEPLECHASE;đua ngựa nhảy rào 
+BASELINE;vạch cơ sở 
+BIRDLE;dây cương 
+REARCOURT;viền khu vực thi đấu
+COUNTERPUNCH;đấm móc hàm 
+SOUTHPAW;võ sĩ tay trái 
+SPARRING;đấu tập 
+UNANIMOUS;bầu cử 
+TOUCHLINE;đường biên 
+BOGEY;cú đánh ma quỷ 
+HAZARDOUS;khắc nghiệt 
+MIDFIELDER;trung vệ 
+GROUNDSTROKE;chạm dat 
+UMPIRE;trọng tài 
+HYDROBLADING;trượt băng nghệ thuật 
+SEQUENCE;trình tự 
+INFIELDER;tiền đạo 
+OUTFIELDER;hậu vệ
+INNING;hiệp thi đấu
+BOWLER;người chơi ném cầu 
+CREASE;vạch cho người đánh bóng 
+WICKET;gôn cricket 

@@ -68,7 +68,7 @@ class Bot{
         if(choice.length == 0) choice =String.fromCharCode(random(65,90.5));
         if(this.guessed.length == 0) return random(this.pronoun);
             for(let i = 0;i<choice.length;i++){
-                if(!this.included(choice[i])) return choice[i];
+                if(!this.included(choice[i])) return (choice[i] == '-' ? '_':choice[i]);
             }
         return choice[0];
     }

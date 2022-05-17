@@ -1,53 +1,53 @@
-EMTIONAL;thuoc ve cam giac
-SOCIAL;thuoc ve xa hoi
-PHYSICAL;mat vat li
-WELLNESS;suc khoe
-BEHAVIOUR;hanh vi
-CONSEQUENCE;hau qua
-BEHAVIOURAL;thuoc ve hanh vi
-LANGUAGE;ngon ngu
-DISTRESS;phien muon
-STRESS;cang thang
-FATIGUE;dich benh
-DISORDER;roi loan
-BULIMIA;roi loan an uong
-DEPRESSION;tram cam
-ANXIETY;noi lo au
-SUPPORT;su giup do
-CHARACTERIZED;dac trung
-DEVELOPMENT;su phat trien
-IMPRESSION;an tuong
-DISOWN;ru bo,khong so huu
-RENOVATE;cai tao
-RELUCTANT;luong lu
-CONFUSION;su boi roi
-REFERRAL;gioi thieu
-EMPATHY;su dong cam
-STRESSOR;nguon gay cang thang
-ESTEEM;su kinh trong
-CONCEPT;y tuong
-ABNORMAL;khong binh thuong
-AMNESIA;chung hay quen
-DEFICIENCY;su thieu hut
-DEMENTIA;sa sut tri tue
-EMERGENCY;khan cap
-EXTERNAL;ben ngoai
-INTERNAL;ben trong
-INSECURE;khong an toan
-CONTENT;su vui mung
-INNERSELF;tam hon ben trong
-MAINTAIN;duy tri
-APPOINTMENT;cuoc hen
-PHYSICIAN;bac si
-COUNSELLOR;nguoi tam li
-ADVISOR;nguoi dua ra loi khuyen
-ADDICTION;su nghien ngap
-ADDICTED;con nghien
-ADDICTIVE;thu gay nhien
-IMPACT;anh huong
-NEURON;te bao than kinh
-SUBTLE;mo nhat
-BREAKDOWN;pha vo
-STRUGGLE;tranh dau
-STRANDED;mac ket
-TERMINOLOGY;thuat ngu
+EMTIONAL;thuộc về cảm giác
+SOCIAL;thuộc về xã hội
+PHYSICAL;mặt vật lí
+WELLNESS;sức khoẻ
+BEHAVIOUR;hành vi
+CONSEQUENCE;hậu quả
+BEHAVIOURAL;thuộc về hành vi
+LANGUAGE;ngôn ngữ
+DISTRESS;phiền muộn
+STRESS;căng thẳng
+FATIGUE;dịch bệnh
+DISORDER;rối loạn
+BULIMIA;rối loạn ăn uống
+DEPRESSION;trầm cảm
+ANXIETY;nỗi lo âu
+SUPPORT;sự giúp đỡ
+CHARACTERIZED;đặc trưng
+DEVELOPMENT;sự phát triển
+IMPRESSION;ấn tượng
+DISOWN;rũ bỏ,không sở hữu
+RENOVATE;cải tạo
+RELUCTANT;lưỡng lự
+CONFUSION;sự bối rối
+REFERRAL;giới thiệu
+EMPATHY;sự đồng cảm
+STRESSOR;nguồn gây căng thẳng
+ESTEEM;sự kính trọng
+CONCEPT;ý tưởng
+ABNORMAL;không bình thường
+AMNESIA;chứng hay quên
+DEFICIENCY;sự thiếu hụt
+DEMENTIA;sa sút trí tuệ
+EMERGENCY;khẩn cấp
+EXTERNAL;bên ngoài
+INTERNAL;bên trong
+INSECURE;không an toàn
+CONTENT;sự vui mừng
+INNERSELF;tâm hồn bên trong
+MAINTAIN;duy trì
+APPOINTMENT;cuộc hẹn
+PHYSICIAN;bác sĩ
+COUNSELLOR;cố vấn
+ADVISOR;người khuyên bảo
+ADDICTION;sự nghiện ngập
+ADDICTED;cơn nghiện
+ADDICTIVE;thứ gây nghiện
+IMPACT;ảnh hưởng
+NEURON;tế bào thần kinh
+SUBTLE;mờ nhạt
+BREAKDOWN;phá vỡ
+STRUGGLE;tranh đấu
+STRANDED;mắc kẹt
+TERMINOLOGY;thuật ngữ

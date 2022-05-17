@@ -18,7 +18,7 @@ class Word{
         this.color = color;
         //initial graphic
         for(let i =0;i<this.model.length;i++){
-            this.graphic[i] = new Character(this.pos_x + i*this.width + i*this.spacing,
+            this.graphic[i] = new Character(this.pos_x + i*this.width + (2*i - 0.5)*this.spacing,
                                             this.pos_y,this.size,
                                             this.width/2,this.bind.charCodeAt(i),this.speed,this.color,particle,0);
         }
