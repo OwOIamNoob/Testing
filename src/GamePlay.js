@@ -4,7 +4,7 @@ class Gameplay{
         this.hold = true;
         this.bot_play = false;
         this.count = 0;
-        console.log("library:" +library);
+        // console.log("library:" +library);
         //general information
         this.bonus = 25*difficulty;
         this.attempt = 18 - difficulty * 3;
@@ -15,7 +15,7 @@ class Gameplay{
         
         this.lib = library;
         this.answer = splitTokens(random(this.lib),';');
-        console.log("Answer: " + this.answer);
+        // console.log("Answer: " + this.answer);
         this.fail = fail;
         this.hint = hint;
         console.log( this.fail);
@@ -29,7 +29,7 @@ class Gameplay{
         this.guess = new Character(width/2,2*height/3,height/10,height/6,48,15,color(116,35,35),false,0);/*2*/
         if(this.guess) console.log("Guess assigned");
         this.suggestion = new Stellar(6,this.input.y,this.input.c_size/2,this.answer[0]); /*3*/
-        console.log("Bot library: " + library.length + " length: " + this.answer[0].length);
+        // console.log("Bot library: " + library.length + " length: " + this.answer[0].length);
         this.bot  = new Bot(library,this.answer[0].length);
         //background objects
         //
@@ -65,15 +65,17 @@ class Gameplay{
             this.penalty = max(1-this.degrade*this.suggestion.graphic.length*2,this.penalty - this.degrade*2) ;
             this.score = this.original*this.penalty;
         } 
-        //object interaction
-        this.player.clicked(this.bound); 
-        this.opponent.clicked(this.bound);
-        //switch 
-        if(mouseY >= this.input.y - this.input.c_size/2 && mouseY <= this.input.y + this.input.c_size/2 && !this.bot_play){
+        //to deferentiate touch screen 
+        else if(mouseY >= this.input.y - this.input.c_size/2 && mouseY <= this.input.y + this.input.c_size/2 && !this.bot_play){
             this.input.reset();
             this.input.active = !this.input.active;
             this.player.object.dialog.push("I am guessing a " + (this.input.active ? 'word':'letter'),true);
         }
+        //object interaction
+        this.player.clicked(this.bound); 
+        this.opponent.clicked(this.bound);
+        //switch 
+        
     }
    
     
@@ -237,7 +239,7 @@ class Gameplay{
         push();
         translate(-this.bound,0);
         //back object
-        this.background.show(this.score,this.bound);
+        this.background.show(this.score,this.bound,this.quest.streak);
         //character object
         this.player.show();
         this.opponent.show(this.player.object.x);
@@ -252,7 +254,7 @@ class Gameplay{
         this.timeflag();
         if(this.count/30 % this.period == 0 && this.quest.num >= this.quest.ans.length - 3 && this.allow && this.quest.num > 0){
             this.opponent.object.dialog.push("Maybe it is \n\n" + random(this.bot.library),true);
-            console.log(this.count);
+            // console.log(this.count);
         }  
     }
 }

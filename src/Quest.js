@@ -9,6 +9,7 @@ class Quest{
         this.x = width/2;
         this.y = height/4;
         this.index = 0;
+        this.streak = 0;
         for(let i = 0;i<this.ans.length;i++){
             this.graphic[i] = new Character(this.x + (i-this.ans.length/2+1/2)*this.c_size + 2*(i-this.ans.length/2 + 2)*this.spacing,this.y,this.c_size/8,this.c_size/2,48,8,color(200+i/this.ans.length*50,200 + i/this.ans.length*20,230-i/this.ans.length*150),true,0 );
         }
@@ -30,9 +31,11 @@ class Quest{
                 success[success.length] = i;
                 this.graphic[i].update(value);
                 this.num ++ ;
+                this.streak ++;
             }
         }
         if(this.num >= this.graphic.length) this.done = true;
+        if(success.length == 0) this.streak = 0;
         return success;
     }
 }

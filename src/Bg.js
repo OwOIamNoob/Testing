@@ -18,7 +18,7 @@ class Bg{
         }
         this.font = loadFont("assets/font/led_counter-7_italic.ttf");
     }
-    show(score,x){
+    show(score,x,streak){
         let pos = this.begin;
         for(let i = 0;i<this.obj.length;i++){
             //active or not
@@ -49,6 +49,8 @@ class Bg{
                             fill(250,150,50);
                             textSize(this.width[i]/(2*score.length))
                             text(str(score),pos+this.width[i]/2,5*height/6 - 2*h/3);
+                            textSize(this.width[i]/8);
+                            if(streak >= 3) text("STREAK " + str(streak),pos+this.width[i]/2,5*height/6 - 3*h/5); 
                             pop();
                     }
                 

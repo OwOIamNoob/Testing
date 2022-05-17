@@ -65,7 +65,7 @@ function preload(){
 function setup(){
   let cnv = createCanvas(displayHeight*4/3,displayHeight);
   cnv.parent('sketchHolder');
-  console.log(lib);
+  // console.log(lib);
   menu = new Menu(score_bg); 
   bg_sound[index].loop();
   // a.bot.addbase(base);
@@ -106,7 +106,7 @@ function draw(){
         hint.pop();
         menu.score.add(game.player.name,data[2],int(data[1]),game.score,int(game.count/30),game.status);
         end[index].play();
-        console.log("End index:" + index);
+        // console.log("End index:" + index);
         game = null;
         //stop game sound
         game_sound.stop();
@@ -123,10 +123,10 @@ function mouseClicked(){
     else{
       data = menu.clicked();
       if(data){
-        console.log(data);
+        // console.log(data);
         loadlibrary();
         start.play();
-        console.log(lib);
+        // console.log(lib);
         timeflag = frameCount/30 + 2;
         //stop music
         if(index != 0){
@@ -179,7 +179,7 @@ function loadlibrary(){
     if(data[3].length > 0){
       lib = [];
       lib[0]= data[3].toUpperCase() + ";It's your word";
-      console.log(lib);
+      // console.log(lib);
     }
     //man play 
     else
