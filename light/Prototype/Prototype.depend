@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1514140574 source:f:\project\testing\testing\light\prototype\main.cpp
+	<iostream>
+
+1653226308 source:f:\project\testing\testing\light\prototype\draw.cpp
+	<bits/stdc++.h>
+

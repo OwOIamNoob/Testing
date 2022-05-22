@@ -18,7 +18,7 @@ class Scoreboard{
         console.log(this.table[this.table.length -1].name + " "
         + this.table[this.table.length -1].theme + " "
         + this.table[this.table.length -1].score + " "
-        + this.table[this.table.length -1].g_time + " ")
+        + this.table[this.table.length -1].g_time + " ");
         console.log("Data updated");
     }
     draw(){

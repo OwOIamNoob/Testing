@@ -2,7 +2,7 @@ class Glitter{
     constructor(speed, radius,density,depth){
         //initial graphic 
         this.model = loadImage('assets/object/background.png');
-        console.log(this.model);
+        // console.log(this.model);
         this.buffer = createGraphics(width,depth);
         //particle properties
         this.color = [];

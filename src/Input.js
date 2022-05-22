@@ -15,9 +15,10 @@ class Input{
     }
     typed(){
         if(this.active){
-            if((keyCode >= 65 && keyCode <= 90) || keyCode == 189 || keyCode == 48){
+            if((keyCode >= 65 && keyCode <= 90) || keyCode == 189 || keyCode == 48){ 
+                if(int(this.graphic[this.index].assemble) != 48 || this.index == -1) this.index = min(this.size - 1,this.index + 1);
                 this.graphic[this.index].update(keyCode);
-                this.index = min(this.size - 1,this.index +1);
+                this.index = min(this.size - 1,this.index + 1);
             }
             //backspace
             if(keyCode == 8)

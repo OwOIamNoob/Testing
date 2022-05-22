@@ -1,6 +1,8 @@
 class Gameplay{
     constructor(name,difficulty,library,fail,hint){
         //game is going
+        this.diff = difficulty;
+        console.log('Difficulty: ' + this.diff);
         this.hold = true;
         this.bot_play = false;
         this.count = 0;
@@ -9,7 +11,7 @@ class Gameplay{
         this.bonus = 25*difficulty;
         this.attempt = 18 - difficulty * 3;
         this.failure = 11 - 2 * difficulty;
-        this.period = 15*(4 - difficulty);
+        this.period = 10*(4 - difficulty);
         this.delay = 5;
         //database
         
@@ -56,6 +58,8 @@ class Gameplay{
         this.bound  = 0;
         this.opponent.hint.push('Its meaning can be: \n\n' + this.answer[1]);
         this.moon.reset();
+        //raining
+        if(this.diff > 2)   this.rain = new Rain(50);
     }
     //interaction
     clicked(){
@@ -90,6 +94,7 @@ class Gameplay{
             this.opponent.object.dialog.push('Yes, it has',true);
             this.original += this.bonus;
         }
+        if(random(0,3) > 2 && this.dif > 2) this.rain.reset();
     }
     //check
     check(){
@@ -216,9 +221,8 @@ class Gameplay{
         //bg
         if(this.allow) this.count ++;
         //effect
-        this.glitter.show(height/3,this.bound);
-        //clock 
-        this.moon.show(this);
+        if(this.diff <= 2)    this.glitter.show(height/3,this.bound);
+        else if(!this.rain.active) this.glitter.show(height/3,this.bound);
         //update glitter
         this.glitter.speed  = 3 + 5*this.bound/width;
         this.glitter.density = min(this.glitter.limit,this.glitter.base + this.bound/50);
@@ -233,6 +237,7 @@ class Gameplay{
             this.guess.display();
             pop();
         }  
+        //the fore buffer
         //in relative position
         this.bound = max(0,this.opponent.object.x - width/2);
         if(keyIsDown(39) || keyIsDown(37)) this.bound = max(0,min(this.opponent.object.x - width/2,this.player.object.x - 10));
@@ -241,12 +246,14 @@ class Gameplay{
         //back object
         this.background.show(this.score,this.bound,this.quest.streak);
         //character object
-        this.player.show();
         this.opponent.show(this.player.object.x);
+        this.player.show();
         //foreground objects
         this.surface.show(this.bound);
         this.foreground.show(this.bound);
         pop();
+        if(this.rain)    this.rain.show();
+        //score calculating
         this.original = max(0,this.original - this.degrade/3);
         this.score = int(this.original*this.penalty);
         //game auto edging

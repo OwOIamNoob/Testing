@@ -139,7 +139,7 @@ function mouseClicked(){
   }
   else if(!game){
     if(!ended){
-      game = new Gameplay(data[0],2,lib,fail,hint);
+      game = new Gameplay(data[0],data[1],lib,fail,hint);
       start.stop();
       game.bot.addon(base);
       game_sound.loop();
