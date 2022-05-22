@@ -21,5 +21,8 @@ To run a local server, please consider these options below:
 	- Open project's game.html, there will be a "Go Live" icon at the bottom right corner of Vs Code Screen
 	- Click it and wait for the game to run 
 	- Play
-2- To host a localhost by Chrome 
-	- 
+2- Play it online :) 
+	To exhausted finding how to play this piece of GAMES ?? No problems, you can just playit right here 
+	https://nguyen-tuan-hung.itch.io/hangman-game
+	This game is originally made to upload online soooooo 
+	Heyy, it does its job ( even though not at its best :v ) 
