@@ -26,3 +26,6 @@ To run a local server, please consider these options below:
 	https://nguyen-tuan-hung.itch.io/hangman-game
 	This game is originally made to upload online soooooo 
 	Heyy, it does its job ( even though not at its best :v ) 
+
+
+ANY QUESTION about files can be solved by download my git https://github.com/OwOIamNoob/Testing.git
