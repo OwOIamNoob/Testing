@@ -14,21 +14,22 @@ class Drop{
 }
 //raining
 class Rain{
-    constructor(drop){
+    constructor(drop,period){
         this.drop = [];
         for(let  i = 0;i<drop;i++) this.drop[i] = new Drop();
         this.fog = loadImage("assets/object/fog.png");
         this.appear = 1;
         this.speed = 2;
         this.active = true;
-        this.begin = random(40,60);
-        this.end = this.begin + random(30,90);
+        this.begin = period*random(0,2);
+        this.end = this.begin + period*random(2,3);
+        this.period = period*2;
     }
-    show(){
+    show(count){
         if(!this.active) return ;
-        if(frameCount/30 > this.begin ){
+        if(count/30 > this.begin ){
                 //disapear
-                if(frameCount/30 > this.end) this.speed = -2;
+                if(count/30 > this.end) this.speed = -2;
             push();
             blendMode(MULTIPLY);
             if(this.appear < 255) tint(255,this.appear);
@@ -41,10 +42,10 @@ class Rain{
             if(this.appear == 0) this.active = false;
         }
     }
-    reset(){
+    reset(count){
         if(this.active) return ;
-        this.begin = frameCount/30 + random(10,20);
-        this.end = this.begin + random(20,40);
+        this.begin = count/30 + random(5,10);
+        this.end = this.begin + random(this.period - 5,this.period + 5);
         this.appear = 1;
         this.speed = 2;
         this.active = true;

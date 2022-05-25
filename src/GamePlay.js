@@ -9,7 +9,7 @@ class Gameplay{
         // console.log("library:" +library);
         //general information
         this.bonus = 25*difficulty;
-        this.attempt = 18 - difficulty * 3;
+        
         this.failure = 11 - 2 * difficulty;
         this.period = 10*(4 - difficulty);
         this.delay = 5;
@@ -23,6 +23,7 @@ class Gameplay{
         // console.log( this.fail);
         //interactive object initials
         //
+        this.attempt = this.answer[0].length + (5 - this.diff);
         this.player = new Player(name); /*6*/
         this.opponent = new Opponent(this.hint);/*7*/
         //addition
@@ -30,7 +31,7 @@ class Gameplay{
         this.quest = new Quest(this.answer[0]); /*4*/ 
         this.guess = new Character(width/2,2*height/3,height/10,height/6,48,15,color(116,35,35),false,0);/*2*/
         if(this.guess) console.log("Guess assigned");
-        this.suggestion = new Stellar(6,this.input.y,this.input.c_size/2,this.answer[0]); /*3*/
+        this.suggestion = new Stellar(this.diff*2,this.input.y,this.input.c_size/2,this.answer[0]); /*3*/
         // console.log("Bot library: " + library.length + " length: " + this.answer[0].length);
         this.bot  = new Bot(library,this.answer[0].length);
         //background objects
@@ -59,7 +60,7 @@ class Gameplay{
         this.opponent.hint.push('Its meaning can be: \n\n' + this.answer[1]);
         this.moon.reset();
         //raining
-        if(this.diff > 2)   this.rain = new Rain(50);
+        if(this.diff > 2)   this.rain = new Rain(50,this.period);
     }
     //interaction
     clicked(){
@@ -89,12 +90,13 @@ class Gameplay{
             this.opponent.distance += width/this.failure;
             this.opponent.object.dialog.push(random(this.fail),true);
             this.original -= this.bonus/2;
+
         }
         else {
             this.opponent.object.dialog.push('Yes, it has',true);
             this.original += this.bonus;
         }
-        if(random(0,3) > 2 && this.dif > 2) this.rain.reset();
+        if(random(0,3) > 2 && this.dif > 2) this.rain.reset(this.count);
     }
     //check
     check(){
@@ -202,7 +204,7 @@ class Gameplay{
     show(){
         background(this.bg);
         if(!this.hold) return ;
-        if(frameCount < this.time || this.status != 0 || this.quest.done || this.surface.content.length == this.failure || this.bot_play){
+        if(frameCount < this.time || this.status != 0 || this.quest.done || this.surface.content.length == this.failure || this.bot_play || this.moon.left < 0){
             this.allow = false;
             push();
             blendMode(DODGE);
@@ -219,8 +221,9 @@ class Gameplay{
             
         }
         //bg
-        if(this.allow) this.count ++;
+        if(this.allow || this.bot_play) this.count ++;
         //effect
+        this.moon.show();
         if(this.diff <= 2)    this.glitter.show(height/3,this.bound);
         else if(!this.rain.active) this.glitter.show(height/3,this.bound);
         //update glitter
@@ -252,7 +255,7 @@ class Gameplay{
         this.surface.show(this.bound);
         this.foreground.show(this.bound);
         pop();
-        if(this.rain)    this.rain.show();
+        if(this.rain)    this.rain.show(this.count);
         //score calculating
         this.original = max(0,this.original - this.degrade/3);
         this.score = int(this.original*this.penalty);

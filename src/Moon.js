@@ -10,7 +10,7 @@ class Moon{
         this.angle = -0.489;
         this.duration = attempt*(this.period + this.delay)-this.delay;
         this.speed = 0.978/(this.duration*50);
-        this.p_speed = 1.35*this.radius/((this.period + this.delay)*30);
+        this.p_speed = 1.45*this.radius/((this.period + this.delay)*30);
         // console.log("particle speed: " + this.p_speed);
         this.time_started = frameCount/30 - this.delay;
         this.tint = 120/(this.duration*30);
