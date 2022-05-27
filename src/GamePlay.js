@@ -115,7 +115,7 @@ class Gameplay{
             this.original += this.bonus;
         }
         let i = random(0,3);
-        if(i >= 1.5 &&  this.diff > 2) this.rain.reset(this.count);
+        if(i >= 2 &&  this.diff > 2) this.rain.reset(this.count);
     }
     //check
     check(){
