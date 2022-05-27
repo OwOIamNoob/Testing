@@ -114,7 +114,8 @@ class Gameplay{
             this.opponent.object.dialog.push('Yes, it has',true);
             this.original += this.bonus;
         }
-        if(random(0,3) > 2 &&  this.diff > 2) this.rain.reset(this.count);
+        let i = random(0,3);
+        if(i >= 1.5 &&  this.diff > 2) this.rain.reset(this.count);
     }
     //check
     check(){
