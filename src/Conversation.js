@@ -15,8 +15,6 @@ class Converse{
         this.active =0;
     }
     display(x,y){
-        // text(this.time,200,300);
-        // text(frameCount,200,350);
         if(this.dialog.length > 0 && this.active){
         if(this.pos < this.dialog.length ){
             push();
@@ -25,7 +23,7 @@ class Converse{
             textFont(this.Font);
             fill(255,255,255,this.opa);
             //rendering
-            text(this.dialog[this.pos],x,y,width/3,height/6);
+            text(this.dialog[this.pos],x + width/20,y,width/3,height/6);
             //updating
             this.opa = max(0,min(255,this.opa + ( (frameCount - this.time) >= 2*(this.delay/3) + 5 ? -1:1)*this.speed));
             pop();
@@ -49,7 +47,6 @@ class Converse{
             this.pos = 0;
             this.time = frameCount;
             this.active = true;
-            // console.log(this.dialog);
         }
         
     }

@@ -11,7 +11,6 @@ class Stellar{
             let y = int(random(height/6,height/2));
             while(abs(y - bound) < bound_size + radius/3) y = int(random(height/6,height/2));
             this.graphic[i] = new Suggestion(value,x,y,radius);
-            // console.log("suggest " + (i+1) + ":" + x + ' ' + y + ' ' + radius + ' ' + value);
         }
         console.log(this.graphic.length + " suggestions assigned");
     }

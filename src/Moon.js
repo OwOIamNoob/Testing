@@ -11,7 +11,6 @@ class Moon{
         this.duration = attempt*(this.period + this.delay)-this.delay;
         this.speed = 0.978/(this.duration*50);
         this.p_speed = 1.45*this.radius/((this.period + this.delay)*30);
-        // console.log("particle speed: " + this.p_speed);
         this.time_started = frameCount/30 - this.delay;
         this.tint = 120/(this.duration*30);
         this.object = loadImage("assets/object/moon.png");
@@ -38,9 +37,8 @@ class Moon{
     reset(){
         this.exp = this.buffer.width/2;
         this.time_started = frameCount/30 + this.period + this.delay;
-        // console.log("next period : "+ this.time_started);
         this.left --;
-        // console.log("Index: " + this.left);
+
     }
     show(count){
         let x = this.base_x + 17/12*height*sin(this.angle);

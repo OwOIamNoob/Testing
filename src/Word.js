@@ -58,6 +58,5 @@ class Word{
     }
     update(value,pos){
       this.bind = this.bind.substring(0,pos) + value + this.bind.substring(pos+1);
-    //   console.log(str(a.bind));
     }
 }

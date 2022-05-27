@@ -10,7 +10,6 @@ class Background{
     this.selector = str(int(random(1,5.9))) + '.png';
     this.ref = loadImage('assets/asset/start/' + this.selector);
     console.log("image " + this.ref.width + " " + this.ref.height);
-    // console.log(this.buffer.width + ' ' + this.buffer.height);
     
     //transparent or not
     if(bg < 255)  this.buffer.background(bg);
@@ -25,12 +24,9 @@ class Background{
     this.delay = delay;
     this.lim = lim; 
     
-    // this.displayed = false;
   }
   draw(){
-    // this.displayed = false;
     this.buffer.push();
-    // if(this.radius > 10) this.buffer.blendMode(BLEND);
     for(let i = 0;i<this.pointer.length;i++){
       //rendering
       let c = this.ref.get(max(0,min(this.ref.width-2,(mouseX+this.pointer[i][0])*this.ref.width/width)),max(0,min(this.ref.height-2,(mouseY + this.pointer[i][1])*this.ref.height/height)));

@@ -61,9 +61,6 @@ class Menu{
             push();
                 if(mouseX >= 4*width/5 && mouseX <= 4*width/5+120 && mouseY >= height/2 && mouseY <= height/2+120) tint(255,0,0);
                 image(this.icon,4*width/5,height/2);
-                // noFill();
-                // strokeWeight(5);
-                // // rect(width/4,height/5-120,width/2,80);
             pop();
         }   
         else {

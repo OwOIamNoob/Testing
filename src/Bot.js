@@ -2,7 +2,6 @@ class Bot{
     //initial 
     constructor(library,size){
         //database
-        // console.log(library);
         this.library = [];
         for(let i = 0; i < library.length;i++){
             let temp = splitTokens(library[i],';');
@@ -14,7 +13,6 @@ class Bot{
         this.guessed = [];
         this.pronoun = ['A','E','I','O','U'];
         console.log("Bot assigned");
-        // console.log(this.library);
     }
     addon(base){
         for(let i = 0; i < base.length; i++){
@@ -52,7 +50,6 @@ class Bot{
             }
         }
         console.log("Database filtered");
-        // console.log(this.library);
     }
     //guess 
     included(value){

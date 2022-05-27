@@ -2,7 +2,6 @@ class Opponent{
     constructor(hint){
         this.object = new Objective(width/2,"opponent",3,300,width/300,10);
         this.hint = hint;
-        // console.log("Hint:" + this.hint.length);
         this.object.lim = 9*width/4;
         this.distance = width/3;
         console.log("Opponent assigned");

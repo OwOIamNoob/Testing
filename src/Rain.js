@@ -34,12 +34,14 @@ class Rain{
                 //disapear
                 if(count/30 > this.end) this.speed = -2;
             push();
+            //droplets
             blendMode(MULTIPLY);
-            if(this.appear < 255) tint(255,this.appear);
-            image(this.fog,0,0,width,height);
             fill(59,71,126);
             noStroke();
             for(let i =0;i<this.drop.length;i++) this.drop[i].draw();
+            //fog
+            if(this.appear < 255) tint(255,this.appear);
+            image(this.fog,0,0,width,height);
             this.appear = max(0,min(255,this.appear + this.speed));
             pop();
             if(this.appear == 0){

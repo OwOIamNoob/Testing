@@ -23,7 +23,6 @@ class Input{
             //backspace
             if(keyCode == 8)
             {
-                // console.log('current index value: ' + this.graphic[this.index].assemble) + ' at index' + this.index;
                 this.graphic[this.index].update(48);
                 this.index = max(0,this.index -1 );
             }
@@ -52,7 +51,6 @@ class Input{
             else    value += String.fromCharCode(this.graphic[i].assemble);
         }
         value = value.toUpperCase();
-        // console.log(value);
         return value;
     }
 }
