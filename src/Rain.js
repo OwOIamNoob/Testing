@@ -30,7 +30,7 @@ class Rain{
         if(!this.active) return ;
         if(count/30 > this.begin ){
             //sound
-            if(!this.sound.isPlaying && this.active)    this.sound.loop();
+            if(!this.sound.isPlaying && this.active)    this.sound.play();
                 //disapear
                 if(count/30 > this.end) this.speed = -2;
             push();

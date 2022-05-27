@@ -89,7 +89,7 @@ function draw(){
     if(game){
       if(game.hold){
         game.show();  
-        addon.volume(min(1,game.opponent.object.x/(2*width)));
+        addon.volume(min(1,game.opponent.object.x/(3*width)));
       } 
       else if(!ended){
         ended = true;
@@ -132,7 +132,7 @@ function mouseClicked(){
       game.bot.addon(base);
       game_sound.loop();
       addon.loop();
-      addon.volume(game.opponent.object.x/(2*width));
+      addon.volume(game.opponent.object.x/(3*width));
       game_sound.volume(game.opponent.distance/(4/3*width));
       if(lib.length == 1){
       game.bot_play = true;
