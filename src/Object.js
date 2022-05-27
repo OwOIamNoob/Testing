@@ -21,7 +21,7 @@ class Objective{
         } 
         //dialog
         this.lib = loadStrings("assets/context/dialog/" + this.type + ".txt");
-        this.dialog = new Converse(20,delay/3);
+        this.dialog = new Converse(height/50,delay/3);
         //display
         this.buffer = createGraphics(width/15,height/6);
         this.speed = speed;
@@ -47,7 +47,7 @@ class Objective{
         }   
         else image(this.idle,this.x,this.y,height/12,height/6);
          //display dialog
-        if(this.dialog.dialog)    this.dialog.display(this.x + 30,this.y-30);
+        if(this.dialog.dialog)    this.dialog.display(this.x + 30,this.y-20);
         if(frameCount % this.delay == 0) this.dialog.push(random(this.lib),false);
     }
   }

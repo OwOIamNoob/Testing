@@ -42,15 +42,14 @@ class Moon{
         this.left --;
         // console.log("Index: " + this.left);
     }
-    show(){
-        let scale = this.buffer.width*(1 + frameCount/(this.duration*30)/3);
+    show(count){
         let x = this.base_x + 17/12*height*sin(this.angle);
         let y = height/3 - (17/12*height*cos(this.angle) - this.base_y); 
         this.draw();
         push();
         blendMode(ADD);
-        tint(255,255 - this.tint*frameCount/2,255-this.tint*frameCount);
-        image(this.buffer,x,y,scale,scale);
+        tint(255,255 - this.tint*count/2,255-this.tint*count);
+        image(this.buffer,x,y);
         pop();
         this.angle += this.speed;
     }

@@ -24,10 +24,13 @@ class Rain{
         this.begin = period*random(0,2);
         this.end = this.begin + period*random(2,3);
         this.period = period*2;
+        this.sound = createAudio("assets/sound/rain.mp3");
     }
     show(count){
         if(!this.active) return ;
         if(count/30 > this.begin ){
+            //sound
+            if(!this.sound.isPlaying && this.active)    this.sound.loop();
                 //disapear
                 if(count/30 > this.end) this.speed = -2;
             push();
@@ -39,7 +42,11 @@ class Rain{
             for(let i =0;i<this.drop.length;i++) this.drop[i].draw();
             this.appear = max(0,min(255,this.appear + this.speed));
             pop();
-            if(this.appear == 0) this.active = false;
+            if(this.appear == 0){
+                this.sound.stop();
+                this.sound.noLoop();
+                this.active = false;
+            } 
         }
     }
     reset(count){

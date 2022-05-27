@@ -56,7 +56,10 @@ class Gameplay{
         //time 
         this.time = frameCount;
         //translate
+        this.icon = loadImage("assets/object/arrow.png");
         this.bound  = 0;
+        this.perspective = 1;
+        this.i_pos = 0;
         this.opponent.hint.push('Its meaning can be: \n\n' + this.answer[1]);
         this.moon.reset();
         //raining
@@ -64,6 +67,12 @@ class Gameplay{
     }
     //interaction
     clicked(){
+        //switch 
+        if(mouseX >= this.i_pos && mouseX <= this.i_pos + width/30 && mouseY >= height/2 && mouseY <= height/2 + height/20){
+            this.perspective = 1 - this.perspective;
+            this.i_pos = (this.perspective == 1 ? 0:width-20);
+        }
+        //interaction admit
         if(!this.allow && !this.bot_play) return ;
         //click on suggestion 
         if(this.suggestion.clicked()){
@@ -79,7 +88,6 @@ class Gameplay{
         //object interaction
         this.player.clicked(this.bound); 
         this.opponent.clicked(this.bound);
-        //switch 
         
     }
    
@@ -174,7 +182,12 @@ class Gameplay{
         }
         if(this.surface.content.length == this.failure && !this.bot_play) this.opponent.distance = 3*width;
         //stop displaying 
-        if(this.status != 0) this.hold = false;
+        if(this.status != 0){
+            this.hold = false;
+            if(this.rain){
+                if(this.rain.sound.isPlaying) this.rain.sound.stop();
+            }
+        } 
     }
     //time management
     timeflag(){
@@ -223,7 +236,7 @@ class Gameplay{
         //bg
         if(this.allow || this.bot_play) this.count ++;
         //effect
-        this.moon.show();
+        this.moon.show(this.count);
         if(this.diff <= 2)    this.glitter.show(height/3,this.bound);
         else if(!this.rain.active) this.glitter.show(height/3,this.bound);
         //update glitter
@@ -242,8 +255,8 @@ class Gameplay{
         }  
         //the fore buffer
         //in relative position
-        this.bound = max(0,this.opponent.object.x - width/2);
-        if(keyIsDown(39) || keyIsDown(37)) this.bound = max(0,min(this.opponent.object.x - width/2,this.player.object.x - 10));
+        if(this.perspective == 1)    this.bound = max(0,this.opponent.object.x - width/2);
+        if(keyIsDown(39) || keyIsDown(37) || this.perspective == 0) this.bound = max(0,min(this.opponent.object.x - width/2,this.player.object.x - width/4));
         push();
         translate(-this.bound,0);
         //back object
@@ -262,9 +275,16 @@ class Gameplay{
         //game auto edging
         this.endgame();
         this.timeflag();
-        if(this.count/30 % this.period == 0 && this.quest.num >= this.quest.ans.length - 3 && this.allow && this.quest.num > 0){
-            this.opponent.object.dialog.push("Maybe it is \n\n" + random(this.bot.library),true);
+        if(this.count/60 % this.period == 0 && this.quest.num >= this.quest.ans.length - 3 && this.allow && this.quest.num > 0){
+            this.player.object.dialog.push("Maybe it is \n\n" + random(this.bot.library),true);
             // console.log(this.count);
         }  
+        push();
+        if(this.perspective == 0){
+            translate(width,0);
+            scale(-1,1);
+        } 
+        image(this.icon,0,height/2,width/30,height/20);
+        pop();
     }
 }

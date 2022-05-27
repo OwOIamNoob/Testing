@@ -27,5 +27,20 @@ To run a local server, please consider these options below:
 	This game is originally made to upload online soooooo 
 	Heyy, it does its job ( even though not at its best :v ) 
 
-
+About the game: 
+How to play: 
+	First of all, type in your name, choose your difficulty and word theme, and if you want the bot to guess your word, fill in the AI field
+	When everything is settled in, click go and watch the opening cutscene ( or u can skip it by clicking in the game, same as the ending )
+	In the game, there will be differences between difficulties:
+	- General differences: Failure attempts and total guesses restriction, upper level word
+	- On lvl 3 exclusively, there will be rain puh puh which means you will have to blind guess
+	On the wall, there will be display for your failed attempts
+	On the surface, there will be occasionally signs displaying your score( and streak) 
+Interaction:
+	Click on the explicit stars to review sum suggestion in exchange for certain score
+	Click on the girl for guidances and maybe, its meaning in a language 
+	Click on the word to switch guessing mode: letter or full word 
+	Press arrows to move your character, the game ends whether you touch the girl or the girl go to the edge 
+	Play the game OwO, you can touch your character to turn on light :) 
+	There will be a button to switch camera :3 Hold on for a sec
 ANY QUESTION about files can be solved by download my git https://github.com/OwOIamNoob/Testing.git

@@ -79,14 +79,7 @@ function draw(){
     } 
     //set background
     background(10);
-    //debug screen
-    // push();
-    //   fill(255);
-    //   textSize(height/5);
-    //   textAlign(CENTER);
-    //   text("Click me",width/2,height/2);
-    // pop();
-    //menu manage
+    //menu
     if(menu.active) menu.show();
     else if(!game){
       if(!ended)
@@ -98,7 +91,7 @@ function draw(){
     if(game){
       if(game.hold){
         game.show();  
-        addon.volume(game.opponent.object.x/(9/4*width));
+        addon.volume(min(1,game.opponent.object.x/(2*width)));
       } 
       else if(!ended){
         ended = true;
@@ -144,8 +137,8 @@ function mouseClicked(){
       game.bot.addon(base);
       game_sound.loop();
       addon.loop();
-      addon.volume(game.opponent.object.x/(9/4*width));
-      game_sound.volume(game.opponent.distance/(2*width));
+      addon.volume(game.opponent.object.x/(2*width));
+      game_sound.volume(game.opponent.distance/(4/3*width));
       if(lib.length == 1){
       game.bot_play = true;
       game.player.name = "Bot";
@@ -169,7 +162,7 @@ function keyPressed(){
     if(game.hold){
       game.typed();
       //adjust volume
-      game_sound.volume(game.opponent.distance/(2*width));
+      game_sound.volume(min(1,game.opponent.distance/(4/3*width)));
     } 
   }
 }
