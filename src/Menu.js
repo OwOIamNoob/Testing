@@ -92,6 +92,14 @@ class Menu{
     }
     //create gameplay
     saving(){
+        let checker = this.target.value();
+        for(let i = 0;i<checker.length;i++){
+            console.log(checker.charCodeAt(i));
+            if (checker.charCodeAt(i) < 65 || (checker.charCodeAt(i) > 90 && checker.charCodeAt(i) < 97) || checker.charCodeAt(i) > 122 ){
+                window.alert('Inappropriate input !!');
+                return ;
+            } 
+        }
         let data = [str(this.name.value()),str(this.level.value()),this.categories.value(),this.target.value()] ;
         this.active = false;
         this.hiding();

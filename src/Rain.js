@@ -36,7 +36,7 @@ class Rain{
             push();
             //droplets
             blendMode(MULTIPLY);
-            fill(59,71,126);
+            fill(59,71,126,this.appear);
             noStroke();
             for(let i =0;i<this.drop.length;i++) this.drop[i].draw();
             //fog
